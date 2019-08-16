@@ -1,0 +1,36 @@
+* System
+  The general idea is a separation of concerns. There is the "tuistate",
+  and this includes the gamestate. The gamestate is only accessed when:
+  - Adding checkers to the board
+  - Making a move
+  There are two "modes" for the TUI.
+** Human move
+   The human controls the cursor and builds a move. This is activated
+   when the gamestate has a "Human" player making a move.
+   - pressing the arrow keys navigates the board
+   - pressing the space key adds the current square to the move.
+   - pressing enter "applies the move".
+** CPU move
+   The CPU move will require enter to be pressed to complete. This has
+   the added benefit that when playing CPU vs CPU, you may see the
+   game play out. 
+** End of Game
+   A third state is the end of game, which will offer the player two
+   options (new game or quit).
+
+* Note for Students
+  You will need to expose two functions:
+  - applyMove :: [Coord] -> GameState -> GameState
+  - getMove :: GameState -> [Coord]
+  and fill them in at the appropratiate point in the code. However,
+  GameState is a Lens, which is somewhat outside the scope
+  of 449. I've included two combinators
+  - applyStudentLift :: ([Coord] -> StudentGame -> StudentGame) -> [Coord] -> GameState -> GameState
+  - getStudentMove :: (StudentGame -> [Coord]) -> GameState -> [Coord]
+  so that you may use the StudentGame datatype in your program.  Feel
+  free to use your own internal data structure rather than
+  StudentGame, but keep in mind that we expect the function that is
+  exposed to Checkers to be of the form applyMove and getMove.
+  
+    
+   
