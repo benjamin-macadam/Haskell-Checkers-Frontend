@@ -41,13 +41,14 @@ Student code import.
 import GameLogic as SC
 
 {-
- Datatype Declarations: We begin with the datatype declarations,
- keeping them in a fixed area of the program for easy reference.
+ Datatype Declarations:
+We begin with the datatype declarations,keeping them
+in a fixed area of the program for easy reference.
 
- The next task will involve translating these to Lenses, and dealing
- with the changes as the propograte throughout the code.
+ The next task will involve translating these to
+Lenses, and dealing with the changes as the
+propograte throughout the code.
 -}
-
 
 
 
@@ -55,20 +56,11 @@ type Board = NonEmptyCursor (NonEmptyCursor SC.Coord)
 
 data TuiState =
   TuiState { _board :: Board
-           , _move :: SC.Move
-           , _game :: GameState}
-              deriving (Show, Eq)
-
-data GameState =
-  GameState { _blackPieces :: [SC.Coord]
-            , _redPieces :: [SC.Coord]
-            , _blackKings :: [SC.Coord]
-            , _redKings :: [SC.Coord]
-            , _blackPlayer :: SC.Player
-            , _redPlayer :: SC.Player
-            , _status :: SC.Status
-            , _message :: String}
-              deriving (Show, Eq)
+           , _move :: Move
+           , _game :: GameState
+           , _redMove :: MoveType
+           , _blackMove :: MoveType
+           , _moveLogic :: ApplyMove}
 
 type PieceFunction = SC.Coord -> String
 
@@ -78,7 +70,6 @@ type ResourceName = String
   Set up lenses
 -}
 makeLenses ''TuiState
-makeLenses ''GameState
 {-
   Cursor functions
 -}
@@ -91,11 +82,25 @@ accessCursor = nonEmptyCursorCurrent . nonEmptyCursorCurrent
 -}
 
 tui :: IO ()
-tui = do
-  let initialState = buildInitialState
-  endState <- defaultMain tuiApp initialState
-  print endState
+tui = humanTui applyMove initialGameState
 
+humanTui :: ApplyMove -> GameState -> IO ()
+humanTui = generalConstructor Human Human
+
+redAiTui :: CpuMove -> ApplyMove -> GameState -> IO ()
+redAiTui r = generalConstructor (CPU r) Human
+
+blackAiTui :: CpuMove -> ApplyMove -> GameState -> IO ()
+blackAiTui b = generalConstructor Human (CPU b)
+
+aiTestTui :: CpuMove -> CpuMove -> ApplyMove -> GameState -> IO ()
+aiTestTui r b = generalConstructor (CPU r) (CPU b)
+
+generalConstructor :: MoveType -> MoveType -> ApplyMove -> GameState -> IO ()
+generalConstructor r b a g = do
+  let initialState = buildInitialState r b a g
+  endState <- defaultMain tuiApp initialState
+  print (endState^.game)
 {-
   Basic tuiApp information. 
 -}
@@ -107,8 +112,7 @@ tuiApp =
         , appChooseCursor = showFirstCursor
         , appHandleEvent = handleTuiEvent
         , appStartEvent = pure
-        , appAttrMap = const theAttributes
-        }
+        , appAttrMap = const theAttributes}
 
 theAttributes :: AttrMap
 theAttributes = attrMap V.defAttr
@@ -116,60 +120,37 @@ theAttributes = attrMap V.defAttr
   ,(oddBlock, V.green `on` V.blue)
   ,(evenSel,  V.green `on` V.brightWhite)
   ,(oddSel, V.green `on` V.brightCyan)
+  ,(redPiece, V.green `on` V.red)
+  ,(blackPiece, V.green `on` V.black)
   ,(plain, V.black `on` V.white)]
 
-evenBlock, oddBlock, evenSel, oddSel :: AttrName
+-- Empty squares
+evenBlock, oddBlock, evenSel, oddSel, redPiece, blackPiece :: AttrName
 evenBlock = "evenBlock"
 oddBlock = "oddBlock"
 evenSel = "evenSel"
 oddSel = "oddSel"
+redPiece = "redPiece"
+blackPiece = "blackPiece"
+-- Squares with pieces
 
 plain :: AttrName
 plain = "plain"
 
---initialization        
-initializeState :: SC.Player -> SC.Player -> SC.Status -> TuiState
-initializeState a b c= TuiState { _board = initialBoard
-                              , _move = []
-                              , _game = initializeGameState a b c}
-
-
-buildInitialState :: TuiState
-buildInitialState = TuiState { _board = initialBoard
-                             , _move = []
-                             , _game = buildInitialGameState}
-
-buildInitialGameState :: GameState
-buildInitialGameState = initializeGameState Human Human NewGame
-
-
-initializeGameState :: SC.Player -> SC.Player -> SC.Status -> GameState                       
-initializeGameState a b c = setMessage $
-  GameState { _blackPieces = blackInit
-            , _redPieces = redInit
-            , _blackKings = []
-            , _redKings = []
-            , _blackPlayer = a
-            , _redPlayer = b
-            , _status = c
-            , _message = "This is still a work in progress"}
-
-
-blackInit :: [SC.Coord]
-blackInit = [ (1,0), (3,0), (5,0), (7,0)
-            , (0,1), (2,1), (4,1), (6,1)
-            , (1,2), (3,2), (5,2), (7,2)]
-
-redInit :: [SC.Coord]
-redInit = [ (0,7), (2,7), (4,7), (6,7)
-          , (1,6), (3,6), (5,6), (7,6)
-          , (0,5), (2,5), (4,5), (6,5)]
+-- Initial TUI
+buildInitialState :: MoveType -> MoveType -> ApplyMove -> GameState -> TuiState
+buildInitialState r b a g =
+  TuiState { _board = initialBoard
+           , _move = []
+           , _game = g
+           , _redMove = r
+           , _blackMove = b
+           , _moveLogic = a}
 
 initialBoard :: NonEmptyCursor (NonEmptyCursor SC.Coord)
 initialBoard = makeNonEmptyCursor $ NE.fromList
   [ makeNonEmptyCursor $
     NE.fromList [(i,j) | i <- [0..7] ] | j <- [0..7]]
-
 
 {-
   Draw function.
@@ -177,24 +158,13 @@ initialBoard = makeNonEmptyCursor $ NE.fromList
 
 drawUI :: TuiState -> [Widget ResourceName]
 drawUI s = case s^.game^.status of
-  NewGame -> drawNewGameUI s
   GameOver -> drawGameOverUI s
   _ -> drawGameUI s
-               
+
 drawGameUI :: TuiState -> [Widget ResourceName]
-drawGameUI s = [ C.center $ padRight (Pad 2) (drawStats s) <=> drawGrid s ]
+drawGameUI s =
+  [ C.center $ padRight (Pad 2) (drawStats s) <=> drawGrid s ]
 
--- New Game UI
-
-drawNewGameUI :: TuiState -> [Widget ResourceName]
-drawNewGameUI _ = [ withBorderStyle BS.unicodeBold
-                  $ B.borderWithLabel (str "Game Mode")
-                  $ vBox [ withAttr plain $ str $
-                         (show x) ++ ". " ++ y
-                         | (x,y) <- pairs ]]
-                  where options = ["Human","CPU Default",  "CPU Alt"]
-                        pairs = zip [0..] [x ++ " vs. " ++ y | x <- options, y <- options]
-                        
 -- Game Over UI
 drawGameOverUI :: TuiState -> [Widget ResourceName]
 drawGameOverUI s = [ withBorderStyle BS.unicodeBold
@@ -221,69 +191,60 @@ drawStats s = withBorderStyle BS.unicodeBold
 drawGrid :: TuiState -> Widget ResourceName
 drawGrid s = withBorderStyle BS.unicodeBold
   $ B.borderWithLabel (str "Draughts")
-  $ vBox rows
+  $ vBox [hBox [drawSquare s cursor square | square <- row] | row <- gameBoard]
   where
-    gameboard = view board s
-    pf = makePf $ view game s
-    rows = 
-      [ vBox $ reverse $ map (drawUnselectedRow pf) $ nonEmptyCursorPrev gameboard
-      , drawSelectedRow pf $ nonEmptyCursorCurrent gameboard
-      , vBox $ map (drawUnselectedRow pf) $ nonEmptyCursorNext gameboard ]
+    cursor = nonEmptyCursorCurrent $ nonEmptyCursorCurrent $ view board s
+    ctl = (NE.toList . rebuildNonEmptyCursor)
+    gameBoard = map ctl $ ctl $ view board s
+-- Drawing logic
+{-
+Each square is represented by a 3x3 grid.
+The bottom square is solid, and only depends even/odd.
+The middle square may have a piece (king or piece), which is displayed as a red/black square.
+The top is the same, its just whether or not there is a king.
+-}
+block :: String
+block = "   "
 
-makePf :: GameState -> PieceFunction      
-makePf gs x
-  | x `elem` (view blackPieces gs) = makeString "x"
-  | x `elem` (view redPieces gs) = makeString "o"
-  | x `elem` (view blackKings gs) = makeString "X"
-  | x `elem` (view redKings gs) = makeString "O"
-  | otherwise = makeString " "
+threeBlock :: String
+threeBlock = block ++ block ++ block
 
-makeString :: String -> String
-makeString x = "   " ++ x ++ "   "
+drawOuterBlock :: Coord -> Coord -> Widget ResourceName
+drawOuterBlock cursor xy = case (cursor == xy, isEven xy) of
+  (True, True) -> withAttr evenSel $ str $ block
+  (True, False) -> withAttr oddSel $ str $ block
+  (False, True) ->  withAttr  evenBlock $ str $ block
+  (False, False) -> withAttr oddBlock $ str $ block
 
-drawUnselectedRow :: PieceFunction -> NonEmptyCursor Coord -> Widget ResourceName
-drawUnselectedRow pf x = vBox [ drawEmptyRow x, drawNonEmptyRow pf x, drawEmptyRow x ]
+drawCenterBlock :: TuiState -> Coord -> Coord -> Widget ResourceName
+drawCenterBlock s b c
+  | c `elem` red = withAttr redPiece $ str $ block
+  | c `elem` black = withAttr blackPiece $ str $ block
+  | otherwise = drawOuterBlock b c
+    where
+      red = (s^.game^.redPieces) ++ (s^.game^.redKings)
+      black = (s^.game^.blackPieces) ++ (s^.game^.blackKings)
 
-drawNonEmptyRow ::  PieceFunction -> NonEmptyCursor Coord -> Widget ResourceName
-drawNonEmptyRow pf = hBox . map (getBlock pf False) . toList . rebuildNonEmptyCursor
+drawTopBlock :: TuiState -> Coord -> Coord -> Widget ResourceName
+drawTopBlock s b c
+  | c `elem` red = withAttr redPiece $ str $ block
+  | c `elem` black = withAttr blackPiece $ str $ block
+  | otherwise = drawOuterBlock b c
+    where
+      red = (s^.game^.redKings)
+      black = (s^.game^.blackKings) 
 
-drawEmptyRow :: NonEmptyCursor Coord -> Widget ResourceName
-drawEmptyRow = hBox . map (getBlock (\_ ->(makeString " ")) False) . toList . rebuildNonEmptyCursor
+drawSquare :: TuiState -> Coord -> Coord -> Widget ResourceName
+drawSquare s b c = vBox [ hBox [o,t,o]
+                        , hBox [o,m,o]
+                        , hBox [o,o,o]
+                        ]
+                   where
+                     o = drawOuterBlock b c
+                     m = drawCenterBlock s b c
+                     t = drawTopBlock s b c
 
-drawSelEmptyRow :: NonEmptyCursor Coord -> Widget ResourceName
-drawSelEmptyRow = hBox . map (getBlock (\_ ->(makeString " ")) True) . toList . rebuildNonEmptyCursor
-
-
-getBlock :: PieceFunction -> Bool -> Coord -> Widget ResourceName
-getBlock pf selected xy =
-  let symb = pf xy in
-    case (isEven xy, selected) of
-      (True, True) -> withAttr evenSel $ str $ symb
-      (True, False) -> withAttr evenBlock $ str $ symb
-      (False, True) -> withAttr oddSel $ str $ symb
-      (False, False) -> withAttr oddBlock $ str $ symb
-
-
-getSymbol :: [Coord] -> [Coord] -> Coord -> String
-getSymbol r b xy 
- | xy `elem` r = " X "
- | xy `elem` b = " O "
- | otherwise = "   "
-  
-
-drawSelectedRow :: PieceFunction -> NonEmptyCursor Coord -> Widget ResourceName
-drawSelectedRow pf row = vBox[ hBox (l' ++ [c'] ++ r')
-                             , hBox (l ++ [c] ++ r)
-                             , hBox (l' ++ [c'] ++ r')]
-  where
-   l' = reverse $ map (getBlock (\x -> makeString " ") False) $ nonEmptyCursorPrev row
-   c' = getBlock (\x -> makeString " ") True $ nonEmptyCursorCurrent row
-   r' =  map (getBlock (\x -> makeString " ") False) $ nonEmptyCursorNext row
-   l = reverse $ map (getBlock pf False) $ nonEmptyCursorPrev row
-   c = getBlock pf True $ nonEmptyCursorCurrent row
-   r = map (getBlock pf False) $ nonEmptyCursorNext row
-
--- Basic helper function  
+-- Basic helper function
 isEven :: Coord -> Bool
 isEven (x,y) = (mod (x+y) 2) == 0
 
@@ -291,24 +252,19 @@ isEven (x,y) = (mod (x+y) 2) == 0
 drawTui :: TuiState -> [Widget ResourceName]
 drawTui ts = drawUI ts
 
-
-
-
-
 {-
 Event Handling
 -}
 
 handleTuiEvent :: TuiState -> BrickEvent n e -> EventM n (Next TuiState)
 handleTuiEvent s = case (s^.game^.status) of
-  Red -> case s^.game^.redPlayer of
-    Human -> humanTuiEvent s
-    CPU _ -> cpuTuiEvent s
-  Black -> case s^.game^.blackPlayer of
-    Human -> humanTuiEvent s
-    CPU _  -> cpuTuiEvent s
-  GameOver -> humanTuiEvent s
-  NewGame -> newTuiEvent s
+  GameOver -> gameOverTuiEvent s
+  Red -> case s^.redMove of
+           Human -> humanTuiEvent s
+           CPU f -> cpuTuiEvent $ set move (f (s^.game)) s
+  Black -> case s^.blackMove of
+             Human -> humanTuiEvent s
+             CPU f -> cpuTuiEvent $ set move  (f (s^.game)) s 
 
 gameOverTuiEvent :: TuiState -> BrickEvent n e -> EventM n (Next TuiState)
 gameOverTuiEvent s e =
@@ -325,31 +281,11 @@ cpuTuiEvent s e =
     VtyEvent vtye ->
       case vtye of
         EvKey (KChar 'q') [] -> halt s
-        EvKey KEnter [] -> continue s'
-          where
-            m = getMove $ s^.game
-            s' = over game (applyMove m) s
+        EvKey KEnter [] ->
+          continue $ over game ((s^.moveLogic) (s^.move)) s
         _ -> continue s
     _ -> continue s
 
-newTuiEvent :: TuiState -> BrickEvent n e -> EventM n (Next TuiState)
-newTuiEvent s e =
-  case e of
-    VtyEvent vtye ->
-      case vtye of
-        EvKey (KChar 'q') [] -> halt s
-        EvKey (KChar '0') [] -> continue $ initializeState Human Human Red
-        EvKey (KChar '1') [] -> continue $ initializeState Human (CPU SC.Default) Red
-        EvKey (KChar '2') [] -> continue $ initializeState Human (CPU SC.Alt) Red
-        EvKey (KChar '3') [] -> continue $ initializeState (CPU SC.Default) Human Red
-        EvKey (KChar '4') [] -> continue $ initializeState (CPU SC.Alt) Human Red
-        EvKey (KChar '5') [] -> continue $ initializeState (CPU SC.Default) (CPU SC.Default) Red
-        EvKey (KChar '6') [] -> continue $ initializeState (CPU SC.Default) (CPU SC.Alt) Red
-        EvKey (KChar '7') [] -> continue $ initializeState (CPU SC.Alt) (CPU SC.Default) Red
-        EvKey (KChar '8') [] -> continue $ initializeState (CPU SC.Alt) (CPU SC.Alt) Red
-        _ -> continue s
-    _ -> continue s
-  
 
 humanTuiEvent :: TuiState -> BrickEvent n e -> EventM n (Next TuiState)
 humanTuiEvent s e =
@@ -365,19 +301,23 @@ humanTuiEvent s e =
         EvKey KUp [] -> case nonEmptyCursorSelectPrev (view board s) of
                             Nothing -> continue s
                             Just s' -> continue $ set board s' s
-        EvKey KEnter [] -> continue $ over game (Checkers.applyMove []) (set move [] s)
-        EvKey (KChar ' ') [] -> continue $ (%~) move ((:) x) s
+        EvKey KEnter [] -> continue $ resetMove $ moveFun s
+          where
+            moveFun = over game ((s^.moveLogic) (s^.move))
+            resetMove = set move []
+        EvKey (KChar ' ') [] -> continue $ over move ((:) x) s
           where
             x = accessCursor $ view board s
         _ -> continue s
-    _ -> continue s    
+    _ -> continue s
 
 
 --HelperFunctions for moving
 moveRight :: Board -> Board
 moveRight b = case (NE.head list) of
                 Nothing -> b
-                Just _ -> fromJust $ makeNonEmptyCursorWithSelection n $ NE.map fromJust list
+                Just _ -> fromJust $
+                  makeNonEmptyCursorWithSelection n $ NE.map fromJust list
   where
     list = NE.map nonEmptyCursorSelectNext $ rebuildNonEmptyCursor b
     n = length $ nonEmptyCursorPrev b
@@ -390,47 +330,10 @@ moveLeft b = case (NE.head list) of
     list = NE.map nonEmptyCursorSelectPrev $ rebuildNonEmptyCursor b
     n = length $ nonEmptyCursorPrev b
 
-setMessage :: GameState -> GameState
-setMessage s = case (s^.status, s^.redPlayer, s^.blackPlayer) of
-  (Red, Human, _) -> set message "Human turn, make your move." s
-  (Red, CPU _, _) -> set message "Press Enter for the CPU to make its move." s
-  (Black, _, Human) ->  set message "Human turn, make your move." s
-  (Black, _, CPU _) -> set message "Press Enter for the CPU to make its move." s
-  _ -> s
+
 {-
 Interact with student code
 -}
-applyMove :: [SC.Coord] -> GameState -> GameState
-applyMove = applyMove'
-
-applyMove' :: [SC.Coord] -> GameState -> GameState
-applyMove' _  s = case s^.status of
-  Red -> setMessage $ set status Black s
-  Black -> setMessage $ set status Red s
-  _ -> buildInitialGameState
-
-
-getMoveCombinator :: (SC.StudentGame -> SC.Move) -> GameState -> SC.Move
-getMoveCombinator gm = gm . toStudent
-
-applyMoveCombinator :: (Move -> StudentGame -> StudentGame) -> Move -> GameState -> GameState
-applyMoveCombinator am m = fromStudent . (am m) . toStudent
-
-
-toStudent :: GameState -> StudentGame
-toStudent x = StudentGame (x^.blackPieces) (x^.redPieces) ( x^.blackKings)
-  (x^.redKings) (x^.blackPlayer) (x^.redPlayer)( x^.status )(x^.message)
-
-fromStudent :: StudentGame -> GameState
-fromStudent (StudentGame bp rp bk rk pb pr s m)
-  = GameState { _blackPieces = bp
-              , _redPieces = rp
-              , _blackKings = bk
-              , _redKings = rk
-              , _blackPlayer = pb
-              , _redPlayer = pr
-              , _status = s
-              , _message = m}
 
 
 

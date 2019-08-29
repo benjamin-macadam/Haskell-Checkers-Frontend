@@ -1,6 +1,6 @@
-name:                tui
-version:             0.0.0.0
-github:              "NorfairKing/tui"
+name:                Haskell-Checkers-Frontend
+version:             0.0.0.1
+github:              "benjamin-macadam/Haskell-Checkers-Frontend"
 license:             MIT
 
 library:

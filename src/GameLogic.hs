@@ -1,42 +1,64 @@
+{-# LANGUAGE OverloadedStrings, TemplateHaskell, FlexibleContexts #-}
 module GameLogic where
+
+import Lens.Micro.Platform
+
+
+type ApplyMove = Move -> GameState -> GameState
+
+type CpuMove = GameState -> Move
+
+data MoveType = Human | CPU CpuMove
 
 type Coord = (Int, Int)
 type Move = [Coord]
 
-data StudentGame = StudentGame [Coord] [Coord] [Coord] [Coord] Player Player Status String
+data Status = Red | Black | GameOver 
   deriving (Show, Eq)
-{-
-VERY IMPORTANT:
-  - First list of coordinates is the position of the black pieces
-  - Second list of coordinates is the position of red pieces
-  - Third list of coordinates is the position of black kings
-  - Fourth list of coordinates is the position of red kings
-  - First Player is Black Player (Human or CPU)
-  - Second Player is RedPlayer (Human or CPU)
-  - Status: RedTurn, BlackTurn, GameOver, NewGame
-  - String: Message for the players (e.g. invalid move)
--}
-data Status = Red | Black | GameOver | NewGame
-  deriving (Show, Eq)
-data Player = Human | CPU AI
-  deriving (Show, Eq)
-{-
-  Students may add their own AI's, and test them against eachother.
-  This feature will be expanded as the semester continues.
--}
-data AI = Default | Alt 
-  deriving (Show, Eq, Enum)
 
- 
 
-{-
-Here are the function signatures the students need to fill in.
--}
+data GameState =
+  GameState { _blackPieces :: [Coord]
+            , _redPieces :: [Coord]
+            , _blackKings :: [Coord]
+            , _redKings :: [Coord]
+            , _status :: Status
+            , _message :: String}
+              deriving (Show, Eq)
 
-studentApplyMove :: Move -> StudentGame -> StudentGame
-studentApplyMove _ x = x
+makeLenses ''GameState
 
-studentGetMove :: StudentGame -> Move
-studentGetMove _ = []
+
+initialGameState :: GameState
+initialGameState =
+  GameState { _blackPieces = blackInit
+            , _redPieces = redInit
+            , _blackKings = []
+            , _redKings = []
+            , _status = Red
+            , _message = ""}
+
+blackInit :: [Coord]
+blackInit = [ (1,0), (3,0), (5,0), (7,0)
+            , (0,1), (2,1), (4,1), (6,1)
+            , (1,2), (3,2), (5,2), (7,2)]
+
+redInit :: [Coord]
+redInit = [ (0,7), (2,7), (4,7), (6,7)
+          , (1,6), (3,6), (5,6), (7,6)
+          , (0,5), (2,5), (4,5), (6,5)]
+
+setMessage :: GameState -> GameState
+setMessage s = case (s^.status) of
+  Red -> set message
+    "Red Turn." s
+  Black -> set message
+    "Black Turn." s
+  _ -> s
+applyMove :: Move -> GameState -> GameState
+applyMove _  s = case s^.status of
+  Red -> setMessage $ set status Black s
+  Black -> setMessage $ set status Red s
+  _ -> initialGameState
 
  
