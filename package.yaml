@@ -1,4 +1,4 @@
-name:                Haskell-Checkers-Frontend
+name:                tui
 version:             0.0.0.1
 github:              "benjamin-macadam/Haskell-Checkers-Frontend"
 license:             MIT

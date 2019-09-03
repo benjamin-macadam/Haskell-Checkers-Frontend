@@ -116,10 +116,10 @@ tuiApp =
 
 theAttributes :: AttrMap
 theAttributes = attrMap V.defAttr
-  [(evenBlock, V.green `on` V.white)
-  ,(oddBlock, V.green `on` V.blue)
-  ,(evenSel,  V.green `on` V.brightWhite)
-  ,(oddSel, V.green `on` V.brightCyan)
+  [(evenBlock, V.green `on` V.brightBlue)
+  ,(oddBlock, V.green `on` V.white)
+  ,(evenSel,  V.green `on` V.brightCyan)
+  ,(oddSel, V.green `on` V.brightWhite)
   ,(redPiece, V.green `on` V.red)
   ,(blackPiece, V.green `on` V.black)
   ,(plain, V.black `on` V.white)]
