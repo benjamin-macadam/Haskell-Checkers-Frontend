@@ -2,19 +2,27 @@
 
 This provides a front-end for a checkers game written in Haskell
 using the Brick library. It is meant for UCalgary CPSC449 course in
-programming paradigms.
+programming paradigms. This is a TUI (a textual user interface), and should
+work over SSH or PuTTY.
 
 ## Setting up and running the program
 
 To set up the program, you must have 
 [stack installed](https://www.haskellstack.org "stack-download-link")
-(click on the above link to download and install stack). Then clone this
-repository go into the director and run:
+(click on the above link to download and install stack). The following set of
+bash commands will clone the git repository and build the stack project.
 
 ``` shell
+git clone https://github.com/benjamin-macadam/Haskell-Checkers-Frontend.git
+cd Haskell-Checkers-Frontend
 stack build
 ```
+You can also download the project as a zip file from the github page and run
+stack build once you've entered the Haskell-Checkers-Frontend.
+Once you've run the build command, 
 stack will then setup an appropriate environment to run this project.
+This may take 20 minutes your first time as stack will need to download
+and install a sandboxed GHC compiler and all of the necessary packages.
 To run this program, enter
 
 ``` shell
@@ -22,12 +30,16 @@ stack run
 ```
 
 and the program will run (note that at this point, all that will happen
-is a simple human vs. human game will be initiated).
+is a simple human vs. human game will be initiated). To debug the program,
+you will want to use the stack environments ghci.
 
+``` shell
+stack ghci run
+```
 
 ## Game Loop
 
-The game loop is split into two parts, human and CPU.
+The game loop is split into two parts, human and AI.
 
 ### Human move
 
@@ -40,9 +52,9 @@ when the gamestate has a "Human" player making a move.
 -   if the move is legal, then the move should be applied and the next players turn begins.
 -   if the move is illegal, then the game must tell them they made an illegal move and ask them to try again.
 
-### CPU move
+### AI move
 
-When CPU's move will be displayed in the "move" bracket of the game status menu. 
+When AI's move will be displayed in the "move" bracket of the game status menu. 
 The user must press enter for the move to be applied.
 
 ## Building the Software
@@ -103,11 +115,11 @@ We recommend you pick one and stay consistent throughout your code!
 ``` haskell
 type ApplyMove = Move -> GameState -> GameState
 
-type CpuMove = GameState -> Move
+type AiMove = GameState -> Move
 
 ```
-The applymove and CpuMove types are very important - an ApplyMove will provide "gamelogic" for your
-checkers game, and a CpuMove will be an AI player.
+The applymove and AiMove types are very important - an ApplyMove will provide "gamelogic" for your
+checkers game, and a AiMove will be an AI player.
 
 
 ### Important functions
@@ -115,24 +127,20 @@ checkers game, and a CpuMove will be an AI player.
 In haskell, the main function has type IO().
 We provide four functions:
 
-``` haskell
-humanTui :: ApplyMove -> GameState -> IO ()
-humanTui = generalConstructor Human Human
+``` hskell
+human :: ApplyMove -> GameState -> IO ()
 
-redAiTui :: CpuMove -> ApplyMove -> GameState -> IO ()
-redAiTui r = generalConstructor (CPU r) Human
+redAi :: AiMove -> ApplyMove -> GameState -> IO ()
 
-blackAiTui :: CpuMove -> ApplyMove -> GameState -> IO ()
-blackAiTui b = generalConstructor Human (CPU b)
+blackAi :: AiMove -> ApplyMove -> GameState -> IO ()
 
-aiTestTui :: CpuMove -> CpuMove -> ApplyMove -> GameState -> IO ()
-aiTestTui r b = generalConstructor (CPU r) (CPU b)
+aiTest :: AiMove -> AiMove -> ApplyMove -> GameState -> IO ()
 ```
  
 To run the program, you will need to go to Main.hs and set
 
 ``` haskell
-main = yourChoiceOfTui args
+main = yourChoiceOf args
 ```
 
 You will need to hand the program the AI programs, game logic function, and the gamestate you wish

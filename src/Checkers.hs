@@ -1,6 +1,11 @@
 {-# LANGUAGE OverloadedStrings, TemplateHaskell, FlexibleContexts #-}
 
-module Checkers where
+module Checkers ( tui
+                , human
+                , redAi
+                , blackAi
+                , aiTest)
+where
 
 
 import System.Directory
@@ -34,10 +39,6 @@ import qualified Data.List.NonEmpty as NE
 import System.Exit
 
 
-{-
-Student code import.
--}
-
 import GameLogic as SC
 
 {-
@@ -62,8 +63,6 @@ data TuiState =
            , _blackMove :: MoveType
            , _moveLogic :: ApplyMove}
 
-type PieceFunction = SC.Coord -> String
-
 type ResourceName = String
 
 {-
@@ -82,19 +81,19 @@ accessCursor = nonEmptyCursorCurrent . nonEmptyCursorCurrent
 -}
 
 tui :: IO ()
-tui = humanTui applyMove initialGameState
+tui = human applyMove initialGameState
 
-humanTui :: ApplyMove -> GameState -> IO ()
-humanTui = generalConstructor Human Human
+human :: ApplyMove -> GameState -> IO ()
+human = generalConstructor Human Human
 
-redAiTui :: CpuMove -> ApplyMove -> GameState -> IO ()
-redAiTui r = generalConstructor (CPU r) Human
+redAi :: AiMove -> ApplyMove -> GameState -> IO ()
+redAi r = generalConstructor (AI r) Human
 
-blackAiTui :: CpuMove -> ApplyMove -> GameState -> IO ()
-blackAiTui b = generalConstructor Human (CPU b)
+blackAi :: AiMove -> ApplyMove -> GameState -> IO ()
+blackAi b = generalConstructor Human (AI b)
 
-aiTestTui :: CpuMove -> CpuMove -> ApplyMove -> GameState -> IO ()
-aiTestTui r b = generalConstructor (CPU r) (CPU b)
+aiTest :: AiMove -> AiMove -> ApplyMove -> GameState -> IO ()
+aiTest r b = generalConstructor (AI r) (AI b)
 
 generalConstructor :: MoveType -> MoveType -> ApplyMove -> GameState -> IO ()
 generalConstructor r b a g = do
@@ -261,10 +260,10 @@ handleTuiEvent s = case (s^.game^.status) of
   GameOver -> gameOverTuiEvent s
   Red -> case s^.redMove of
            Human -> humanTuiEvent s
-           CPU f -> cpuTuiEvent $ set move (f (s^.game)) s
+           AI f -> cpuTuiEvent $ set move (f (s^.game)) s
   Black -> case s^.blackMove of
              Human -> humanTuiEvent s
-             CPU f -> cpuTuiEvent $ set move  (f (s^.game)) s 
+             AI f -> cpuTuiEvent $ set move  (f (s^.game)) s 
 
 gameOverTuiEvent :: TuiState -> BrickEvent n e -> EventM n (Next TuiState)
 gameOverTuiEvent s e =

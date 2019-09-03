@@ -6,9 +6,9 @@ import Lens.Micro.Platform
 
 type ApplyMove = Move -> GameState -> GameState
 
-type CpuMove = GameState -> Move
+type AiMove = GameState -> Move
 
-data MoveType = Human | CPU CpuMove
+data MoveType = Human | AI AiMove
 
 type Coord = (Int, Int)
 type Move = [Coord]
