@@ -4,7 +4,14 @@ module Checkers ( tui
                 , human
                 , redAi
                 , blackAi
-                , aiTest)
+                , aiTest
+                , GameState(..)
+                , Coord
+                , Move
+                , ApplyMove
+                , AiMove
+                , Status(..)
+                )
 where
 
 
@@ -185,7 +192,7 @@ drawStats s = withBorderStyle BS.unicodeBold
            , moveRow ]
     msgRow = withAttr plain $ str $ s^.game^.message
     statusRow = withAttr plain $ str $ show $ s^.game^.status
-    moveRow = withAttr plain $ str $ show $ reverse $ s^.move
+    moveRow = withAttr plain $ str $ show $  s^.move
 
 drawGrid :: TuiState -> Widget ResourceName
 drawGrid s = withBorderStyle BS.unicodeBold
@@ -304,7 +311,7 @@ humanTuiEvent s e =
           where
             moveFun = over game ((s^.moveLogic) (s^.move))
             resetMove = set move []
-        EvKey (KChar ' ') [] -> continue $ over move ((:) x) s
+        EvKey (KChar ' ') [] -> continue $ over move (\l -> l ++ [x]) s
           where
             x = accessCursor $ view board s
         _ -> continue s
