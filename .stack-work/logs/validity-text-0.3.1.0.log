@@ -1,0 +1,8 @@
+Configuring validity-text-0.3.1.0...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for validity-text-0.3.1.0..
+Building library for validity-text-0.3.1.0..
+[1 of 2] Compiling Data.Validity.Text ( src/Data/Validity/Text.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Validity/Text.o )
+[2 of 2] Compiling Paths_validity_text ( .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/autogen/Paths_validity_text.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Paths_validity_text.o )
+Installing library in /Users/benjamin.macadam/Teaching/Haskell-Checkers-Frontend/.stack-work/install/x86_64-osx/lts-12.18/8.4.4/lib/x86_64-osx-ghc-8.4.4/validity-text-0.3.1.0-CXKKxmEpUs8AIL4Pgb3IEc
+Registering library for validity-text-0.3.1.0..

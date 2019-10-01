@@ -1,0 +1,12 @@
+Configuring validity-containers-0.3.1.0...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for validity-containers-0.3.1.0..
+Building library for validity-containers-0.3.1.0..
+[1 of 6] Compiling Data.Validity.Map ( src/Data/Validity/Map.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Validity/Map.o )
+[2 of 6] Compiling Data.Validity.Sequence ( src/Data/Validity/Sequence.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Validity/Sequence.o )
+[3 of 6] Compiling Data.Validity.Set ( src/Data/Validity/Set.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Validity/Set.o )
+[4 of 6] Compiling Data.Validity.Tree ( src/Data/Validity/Tree.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Validity/Tree.o )
+[5 of 6] Compiling Data.Validity.Containers ( src/Data/Validity/Containers.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Validity/Containers.o )
+[6 of 6] Compiling Paths_validity_containers ( .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/autogen/Paths_validity_containers.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Paths_validity_containers.o )
+Installing library in /Users/benjamin.macadam/Teaching/Haskell-Checkers-Frontend/.stack-work/install/x86_64-osx/lts-12.18/8.4.4/lib/x86_64-osx-ghc-8.4.4/validity-containers-0.3.1.0-57LxqQMtPXW7eaf0tTOyp7
+Registering library for validity-containers-0.3.1.0..

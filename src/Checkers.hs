@@ -5,6 +5,7 @@ module Checkers ( tui
                 , redAi
                 , blackAi
                 , aiTest
+                , initialGameState
                 , GameState(..)
                 , Coord
                 , Move
@@ -278,6 +279,12 @@ gameOverTuiEvent s e =
     VtyEvent vtye ->
       case vtye of
         EvKey (KChar 'q') [] -> halt s
+        EvKey (KChar 'n') [] ->
+            continue $ buildInitialState
+                         (view redMove s)
+                         (view blackMove s)
+                         (view moveLogic s)
+                         initialGameState
         _ -> continue s
     _ -> continue s
 
@@ -288,7 +295,7 @@ cpuTuiEvent s e =
       case vtye of
         EvKey (KChar 'q') [] -> halt s
         EvKey KEnter [] ->
-          continue $ over game ((s^.moveLogic) (s^.move)) s
+          continue $ set move [] $ over game ((s^.moveLogic) (s^.move)) s
         _ -> continue s
     _ -> continue s
 

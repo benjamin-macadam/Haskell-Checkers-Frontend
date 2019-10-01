@@ -1,0 +1,1323 @@
+
+==================== FINAL INTERFACE ====================
+2019-10-01 19:02:43.197615 UTC
+
+interface tui-0.0.0.1-4nH3Tw41p0IFkTdq2m9BjA:Checkers 8044
+  interface hash: eefc92e0b005a171ff9c5a3a990d7506
+  ABI hash: 25a5cda77a5f16732a9eb07c80b3919b
+  export-list hash: e4386fcb1c40b2475f73a08c1572b6d4
+  orphan hash: 3bda65d145c5725a1ad18ae14c5869db
+  flag hash: 8543ba50a870845a8c0106ea7121b1ef
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: True
+  where
+exports:
+  Checkers.aiTest
+  Checkers.blackAi
+  Checkers.human
+  Checkers.redAi
+  Checkers.tui
+  GameLogic.initialGameState
+  GameLogic.AiMove
+  GameLogic.ApplyMove
+  GameLogic.Coord
+  GameLogic.GameState{GameLogic.GameState _blackKings _blackPieces _message _redKings _redPieces _status}
+  GameLogic.Move
+  GameLogic.Status{GameLogic.Black GameLogic.GameOver GameLogic.Red}
+module dependencies: GameLogic
+package dependencies: array-0.5.2.0 base-4.11.1.0 binary-0.8.5.1
+                      blaze-builder-0.4.1.0 brick-0.37.2 bytestring-0.10.8.2
+                      containers-0.5.11.0 cursor-0.0.0.1 deepseq-1.4.3.0
+                      directory-1.3.1.5 dlist-0.8.0.5 filepath-1.4.2 ghc-boot-th-8.4.4
+                      ghc-prim-0.5.2.0 hashable-1.2.7.0 integer-gmp-1.0.2.0
+                      microlens-0.4.9.1 microlens-ghc-0.4.9.1 microlens-mtl-0.1.11.1
+                      microlens-platform-0.3.10 microlens-th-0.4.2.3 mtl-2.2.2
+                      parsec-3.1.13.0 pretty-1.1.3.6 primitive-0.6.3.0 stm-2.4.5.1
+                      template-haskell-2.13.0.0 terminfo-0.4.1.1 text-1.2.3.1
+                      th-abstraction-0.2.8.0 time-1.8.0.2 transformers-0.5.5.0
+                      unix-2.7.2.2 unordered-containers-0.2.9.0 utf8-string-1.0.1.1
+                      validity-0.8.0.0 vector-0.12.0.1 vty-5.21 word-wrap-0.4.1
+orphans: brick-0.37.2:Brick.Types
+         time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         stm-2.4.5.1:Control.Monad.STM
+         microlens-platform-0.3.10:Lens.Micro.Platform
+         microlens-ghc-0.4.9.1:Lens.Micro.GHC
+         hashable-1.2.7.0:Data.Hashable.Generic
+         vector-0.12.0.1:Data.Vector.Unboxed
+         vector-0.12.0.1:Data.Vector.Fusion.Bundle
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         text-1.2.3.1:Data.Text.Lazy text-1.2.3.1:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         text-1.2.3.1:Data.Text.Show base-4.11.1.0:GHC.Float
+         base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Complex base-4.11.1.0:Data.Functor.Compose
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         cursor-0.0.0.1:Cursor.List.NonEmpty cursor-0.0.0.1:Cursor.Types
+                         dlist-0.8.0.5:Data.DList ghc-boot-th-8.4.4:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.4:GHC.LanguageExtensions.Type
+                         microlens-0.4.9.1:Lens.Micro.Internal
+                         microlens-ghc-0.4.9.1:Lens.Micro.GHC
+                         microlens-mtl-0.1.11.1:Lens.Micro.Mtl.Internal
+                         microlens-platform-0.3.10:Lens.Micro.Platform
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.3.0:Control.Monad.Primitive
+                         primitive-0.6.3.0:Data.Primitive.Array
+                         primitive-0.6.3.0:Data.Primitive.ByteArray
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.1:Data.Text text-1.2.3.1:Data.Text.Lazy
+                         th-abstraction-0.2.8.0:Language.Haskell.TH.Datatype
+                         unordered-containers-0.2.9.0:Data.HashMap.Base
+                         validity-0.8.0.0:Data.Validity vector-0.12.0.1:Data.Vector
+                         vector-0.12.0.1:Data.Vector.Primitive
+                         vector-0.12.0.1:Data.Vector.Storable
+                         vector-0.12.0.1:Data.Vector.Unboxed
+                         vector-0.12.0.1:Data.Vector.Unboxed.Base
+                         vty-5.21:Graphics.Vty.Image.Internal
+                         vty-5.21:Graphics.Vty.Input.Events
+import  -/  base-4.11.1.0:Control.Monad.IO.Class 96109c36cb3c919872278540487fa39e
+import  -/  base-4.11.1.0:Data.Foldable 8ed35c38958063956af33c935ea03444
+import  -/  base-4.11.1.0:Data.List.NonEmpty 595ee3baddcadebc4831ea7541427984
+import  -/  base-4.11.1.0:Data.Maybe 409c3da2b142470b68be39ce1d97a9f7
+import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
+import  -/  base-4.11.1.0:GHC.Num 8e54b26dce4495382dc4b50cf36ab754
+import  -/  base-4.11.1.0:GHC.Real b4beb0389ba1ad5d9640aae67848c5d3
+import  -/  base-4.11.1.0:GHC.Show 73be67392447c974f19c3befd83c46c0
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  base-4.11.1.0:System.Exit a7af6f90beaa15182d3a20667d878df0
+import  -/  base-4.11.1.0:System.IO e02b6055b5362a3eac04f83991602a53
+import  -/  brick-0.37.2:Brick.AttrMap eed3cdc26f738680c7fede045bfddf4c
+import  -/  brick-0.37.2:Brick.Main ba922e54bd0e8a5c347890633f626044
+import  -/  brick-0.37.2:Brick.Types d9daf51506345fda15653317bb489801
+import  -/  brick-0.37.2:Brick.Types.Internal ae591f70389c92e9b4010cfc59cd518f
+import  -/  brick-0.37.2:Brick.Util 8d03ad0052222803ddfbde27fbe0fe96
+import  -/  brick-0.37.2:Brick.Widgets.Border 3c2c599c23d12c53a0fecc29f93ec2f3
+import  -/  brick-0.37.2:Brick.Widgets.Border.Style baa5989576433e18cb0448b639dd654e
+import  -/  brick-0.37.2:Brick.Widgets.Center fdc5f3f369db8326d86a9e2e2302cecf
+import  -/  brick-0.37.2:Brick.Widgets.Core 13606528af38cefe13665fdf6dd6f056
+import  -/  cursor-0.0.0.1:Cursor.List.NonEmpty a29c50aa2063c9018dd651f55d04d3ec
+import  -/  cursor-0.0.0.1:Cursor.Simple.List.NonEmpty ed60c087119b0bf2b03d720a0894b761
+import  -/  directory-1.3.1.5:System.Directory b48f2bf02a6acabeb39c396bf3b1d6d3
+import  -/  ghc-prim-0.5.2.0:GHC.Classes 122abfcd7450c6c11602933c9ca5f80d
+import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
+import  -/  microlens-0.4.9.1:Lens.Micro 962434009a31a5b07a9c325f04604c4d
+import  -/  microlens-0.4.9.1:Lens.Micro.Type 60377ed102f710af0bf94059aa466f74
+import  -/  microlens-mtl-0.1.11.1:Lens.Micro.Mtl 0b8886821fc976acf46035b23c9705b6
+import  -/  microlens-platform-0.3.10:Lens.Micro.Platform fd1286e3b44c1a151f8e75adfd814d2d
+import  -/  microlens-th-0.4.2.3:Lens.Micro.TH a69d1199298b8fb22a32dfd49cdaea69
+import  -/  GameLogic 2b55c2327a426a831e70cca79d0e3d7f
+  exports: ee4331d29c81232f8ba905c20bfe152b
+  AI 8fb42575ff07903abd1ae600cd6bf05e
+  AiMove 0ffd9c89adda47909860bd8448b761d4
+  ApplyMove e32cf0b3ed800328330f270a7f696ff3
+  Black 5f87a74a5c31742d3481339993d9ba7d
+  Coord 7b6fe17d448e2ca67241ea1c02cf6f7e
+  GameOver 1de4fcaa0f9bc81135c6c6a6d9e9b3b8
+  GameState 81f47d7e9ef3a54ab0f4103dbc0419ae
+  GameState 09877b8e0c9169fd2ba4756be274c99e
+  Human 18ce991a8a6510bf89b7804bbd039667
+  Move b654bfbc26972b8f6f9a791e42f6b2a1
+  MoveType 993fa55425afb98c90a9b5426fe3e1d3
+  Red ae6eac2cfd8aa2144cbba5fad37420fb
+  Status bb3e375c9219c571d5ce46c36b5b34f4
+  _blackKings 09877b8e0c9169fd2ba4756be274c99e
+  _blackPieces 09877b8e0c9169fd2ba4756be274c99e
+  _message 09877b8e0c9169fd2ba4756be274c99e
+  _redKings 09877b8e0c9169fd2ba4756be274c99e
+  _redPieces 09877b8e0c9169fd2ba4756be274c99e
+  _status 09877b8e0c9169fd2ba4756be274c99e
+  applyMove 8ee8356af49f625cf1b63cf1dc3a5c4f
+  blackKings f320fbed4d0c46c347a62a1135cd28b5
+  blackPieces 2feb7ac4c74137a9e03fe727e5a98770
+  initialGameState 49b3508edf71b96a23a9e9adb7bc7bf1
+  message 5280a84929287aca788ccc23b0b492ee
+  redKings d9ce0ded513919e2c430e63ada120f2e
+  redPieces 383e197aeaf78c2641058d1a90fc038e
+  status 9cf18e3e1403c61bea71f38b16b258f4
+import  -/  vty-5.21:Graphics.Vty adc6bd2570eaf8f6d1deb079958571ee
+import  -/  vty-5.21:Graphics.Vty.Attributes a0fe90f9e3fe24c9e70c98c71a18ea11
+import  -/  vty-5.21:Graphics.Vty.Attributes.Color a4fc36a68d4ff39de7095aa0770afcb5
+import  -/  vty-5.21:Graphics.Vty.Input.Events 330ad1e1157ba94abc8e051bb020097a
+0cc8c76d710b8ec1e7058452ff78cd83
+  $s$fEq(,) :: GHC.Classes.Eq (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Int, GHC.Types.Int)
+                  (GHC.Classes.$fEq(,)_$c==
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fEqInt
+                     GHC.Classes.$fEqInt)
+                  Checkers.$s$fEq(,)_$s$fEq(,)_$c/= -}
+1d3327a9fee13af93d7b8a0e596a23ca
+  $s$fEq(,)_$s$fEq(,)_$c/= ::
+    (GHC.Types.Int, GHC.Types.Int)
+    -> (GHC.Types.Int, GHC.Types.Int) -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),1*U(U))><S(S(S)L),1*U(1*U(U),1*U(U))>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: (GHC.Types.Int, GHC.Types.Int))
+                   (y :: (GHC.Types.Int, GHC.Types.Int)) ->
+                 case x of wild { (,) a1 a2 ->
+                 case y of wild1 { (,) b1 b2 ->
+                 case GHC.Classes.eqInt a1 b1 of wild2 {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case GHC.Classes.eqInt a2 b2 of wild3 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True -> GHC.Types.False } } } }) -}
+4353cd402112940dc5c083ba17e7ee6d
+  $tc'TuiState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15778810585265814748##
+                   5922445447408606455##
+                   Checkers.$trModule
+                   Checkers.$tc'TuiState2
+                   0#
+                   Checkers.$tc'TuiState1) -}
+0b956b52b3cf9ffbce0d2633e96fa49f
+  $tc'TuiState1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+833b16b05c3481d33bb393c506db2e68
+  $tc'TuiState2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Checkers.$tc'TuiState3) -}
+94795ea9a5522efd1fa15ba89f01add0
+  $tc'TuiState3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'TuiState"#) -}
+eb472264998e3c6304c2c2272b3d0548
+  $tcTuiState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8577966243272697128##
+                   14575050863209406228##
+                   Checkers.$trModule
+                   Checkers.$tcTuiState1
+                   0#
+                   GHC.Types.krep$*) -}
+5c45102a36a6c1c38fda88690ab76f00
+  $tcTuiState1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Checkers.$tcTuiState2) -}
+7c40442ac17a23a81d894a9d38bfbf07
+  $tcTuiState2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("TuiState"#) -}
+246337017f7346b011c07d451c46af37
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Checkers.$trModule3
+                   Checkers.$trModule1) -}
+e4fab73b329d8277c1093add0f521072
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Checkers.$trModule2) -}
+cd5a4f21f63800115e2ac1e5e18b10e0
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Checkers"#) -}
+70e4831ef8eefdad2d644272a931eb60
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Checkers.$trModule4) -}
+5aa63127d2f05739b451bdfeb2780a40
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("tui-0.0.0.1-4nH3Tw41p0IFkTdq2m9BjA"#) -}
+fbdcdfb2c1c31a00ff7feac5edf9f489
+  $wdrawTui ::
+    Checkers.Board
+    -> GameLogic.Move
+    -> [GameLogic.Coord]
+    -> [GameLogic.Coord]
+    -> [GameLogic.Coord]
+    -> [GameLogic.Coord]
+    -> GameLogic.Status
+    -> GHC.Base.String
+    -> (# Brick.Types.Widget Checkers.ResourceName,
+          [Brick.Types.Widget Checkers.ResourceName] #)
+  {- Arity: 8,
+     Strictness: <L,U(1*U,U(U,U(U(U),U(U)),U),U)><L,1*U><L,1*U><L,1*U><L,U><L,U><S,1*U><L,1*U>,
+     Inline: [0] -}
+4e38cba3f71963d9bed4a91be8cdf45e
+  $wgo ::
+    GHC.Prim.Int#
+    -> (# Cursor.Simple.List.NonEmpty.NonEmptyCursor
+            (GHC.Types.Int, GHC.Types.Int),
+          [Cursor.Simple.List.NonEmpty.NonEmptyCursor
+             (GHC.Types.Int, GHC.Types.Int)] #)
+  {- Arity: 1, Strictness: <L,U>, Inline: [0] -}
+4424268535c0ef061aabfcebd0213b14
+  type Board =
+    Cursor.Simple.List.NonEmpty.NonEmptyCursor
+      (Cursor.Simple.List.NonEmpty.NonEmptyCursor GameLogic.Coord)
+d669e8a2ac578109c1138065748c3d12
+  type ResourceName = GHC.Base.String
+f60335a3e32d7a1863a4e22fffff8362
+  data TuiState
+    = TuiState {_board :: Checkers.Board,
+                _move :: GameLogic.Move,
+                _game :: GameLogic.GameState,
+                _redMove :: GameLogic.MoveType,
+                _blackMove :: GameLogic.MoveType,
+                _moveLogic :: GameLogic.ApplyMove}
+f60335a3e32d7a1863a4e22fffff8362
+  _blackMove :: Checkers.TuiState -> GameLogic.MoveType
+  RecSel Left Checkers.TuiState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Checkers.TuiState) ->
+                 case ds of wild { Checkers.TuiState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds5 }) -}
+f60335a3e32d7a1863a4e22fffff8362
+  _board :: Checkers.TuiState -> Checkers.Board
+  RecSel Left Checkers.TuiState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLL),1*U(1*U(U,U,U),A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Checkers.TuiState) ->
+                 case ds of wild { Checkers.TuiState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds1 }) -}
+f60335a3e32d7a1863a4e22fffff8362
+  _game :: Checkers.TuiState -> GameLogic.GameState
+  RecSel Left Checkers.TuiState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLL),1*U(A,A,1*U(U,U,U,U,U,U),A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Checkers.TuiState) ->
+                 case ds of wild { Checkers.TuiState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds3 }) -}
+f60335a3e32d7a1863a4e22fffff8362
+  _move :: Checkers.TuiState -> GameLogic.Move
+  RecSel Left Checkers.TuiState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLL),1*U(A,1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Checkers.TuiState) ->
+                 case ds of wild { Checkers.TuiState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds2 }) -}
+f60335a3e32d7a1863a4e22fffff8362
+  _moveLogic :: Checkers.TuiState -> GameLogic.ApplyMove
+  RecSel Left Checkers.TuiState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLS),1*U(A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Checkers.TuiState) ->
+                 case ds of wild { Checkers.TuiState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds6 }) -}
+f60335a3e32d7a1863a4e22fffff8362
+  _redMove :: Checkers.TuiState -> GameLogic.MoveType
+  RecSel Left Checkers.TuiState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLL),1*U(A,A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Checkers.TuiState) ->
+                 case ds of wild { Checkers.TuiState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds4 }) -}
+180f9d1c291b21149aa30ec349ce9a08
+  aiTest ::
+    GameLogic.AiMove
+    -> GameLogic.AiMove
+    -> GameLogic.ApplyMove
+    -> GameLogic.GameState
+    -> GHC.Types.IO ()
+  {- Arity: 5, Strictness: <L,U><L,U><L,U><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Checkers.aiTest1
+                  `cast`
+                (<GameLogic.AiMove>_R
+                 ->_R <GameLogic.AiMove>_R
+                 ->_R <GameLogic.ApplyMove>_R
+                 ->_R <GameLogic.GameState>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+d9267603c402a4db49d492b369c6e774
+  aiTest1 ::
+    GameLogic.AiMove
+    -> GameLogic.AiMove
+    -> GameLogic.ApplyMove
+    -> GameLogic.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5, Strictness: <L,U><L,U><L,U><L,U><S,U>,
+     Unfolding: InlineRule (5, True, False)
+                (\ (r :: GameLogic.AiMove)
+                   (b :: GameLogic.AiMove)
+                   (eta :: GameLogic.ApplyMove)
+                   (eta1 :: GameLogic.GameState)
+                   (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 Checkers.aiTest2
+                   (GameLogic.AI r)
+                   (GameLogic.AI b)
+                   eta
+                   eta1
+                   eta2) -}
+2bcad4fca73e9de3a533cf2d24062afa
+  aiTest10 ::
+    [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Checkers.aiTest19
+                   Checkers.aiTest11) -}
+e7cbaa6360a0e60ae92c854a6dbef20f
+  aiTest11 ::
+    [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Checkers.aiTest12
+                   (GHC.Types.[]
+                      @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr))) -}
+55db47220ab5edd22d0519c06b7fa6a9
+  aiTest12 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Strictness: m,
+     Unfolding: ((Checkers.plain, Checkers.aiTest13)) -}
+e7d6cd09cf51f1cd6eb714718da683b8
+  aiTest13 :: Graphics.Vty.Attributes.Attr
+  {- Strictness: m,
+     Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Checkers.aiTest15
+                   Checkers.aiTest14
+                   (Graphics.Vty.Attributes.Default @ Data.Text.Internal.Text)) -}
+c4decad8ca07a0017e5c3f779e877f64
+  aiTest14 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Strictness: m3,
+     Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.white) -}
+cb026bf55b9d35b010362964b65270cb
+  aiTest15 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Strictness: m3,
+     Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.black) -}
+1371743d87deedd076cf1c9098323a49
+  aiTest16 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Checkers.aiTest17
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+56a26a570e90214e6d49ab848e35dcdd
+  aiTest17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Checkers.aiTest18) -}
+511a1d1f19a4ff4d14ee304940743abc
+  aiTest18 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("plain"#) -}
+cebd9bfb13cd188aa03f4bbd94a64f29
+  aiTest19 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Strictness: m,
+     Unfolding: ((Checkers.blackPiece, Checkers.aiTest20)) -}
+4fb90f29812b5e1f8cca4ae2d3d1acd4
+  aiTest2 ::
+    GameLogic.MoveType
+    -> GameLogic.MoveType
+    -> GameLogic.ApplyMove
+    -> GameLogic.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5, Strictness: <L,U><L,U><L,U><L,U><S,U>,
+     Unfolding: (\ (r :: GameLogic.MoveType)
+                   (b :: GameLogic.MoveType)
+                   (a :: GameLogic.ApplyMove)
+                   (g :: GameLogic.GameState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Brick.Main.customMain1
+                        @ Checkers.ResourceName
+                        @ GHC.Types.Any
+                        @ Checkers.TuiState
+                        GHC.Classes.$fOrd[]_$s$fOrd[]1
+                        Brick.Main.defaultMain2
+                          `cast`
+                        (Sym (GHC.Types.N:IO[0] <Graphics.Vty.Vty>_R))
+                        (GHC.Base.Nothing @ (Brick.BChan.BChan GHC.Types.Any))
+                        (Checkers.tuiApp @ GHC.Types.Any)
+                        (Checkers.TuiState
+                           Checkers.initialBoard
+                           (GHC.Types.[] @ GameLogic.Coord)
+                           g
+                           r
+                           b
+                           a)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (case ipv1 of wild { Checkers.TuiState x x1 x2 x3 x4 x5 ->
+                    case x2 of ww2 { GameLogic.GameState ww3 ww4 ww5 ww6 ww7 ww8 ->
+                    GameLogic.$w$cshowsPrec
+                      0#
+                      ww3
+                      ww4
+                      ww5
+                      ww6
+                      ww7
+                      ww8
+                      (GHC.Types.[] @ GHC.Types.Char) } })
+                   GHC.Types.True
+                   ipv }) -}
+c95e4bd9f801b1ebafa3f51d92251ba5
+  aiTest20 :: Graphics.Vty.Attributes.Attr
+  {- Strictness: m,
+     Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Checkers.aiTest21
+                   Checkers.aiTest15
+                   (Graphics.Vty.Attributes.Default @ Data.Text.Internal.Text)) -}
+04d2b03b26d18fc4a683efe79e6206cb
+  aiTest21 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Strictness: m3,
+     Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.green) -}
+d6a52fdf3401bbd9293e8fba3d79a988
+  aiTest22 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Checkers.aiTest23
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+e116ef45784e5c011a01840688175a89
+  aiTest23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Checkers.aiTest24) -}
+77c278b7d894559e183b0c39c183aaf4
+  aiTest24 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("blackPiece"#) -}
+eec2600c5d7764b1d81bdedaad44a7d0
+  aiTest25 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Strictness: m,
+     Unfolding: ((Checkers.redPiece, Checkers.aiTest26)) -}
+b796cce66ed39fb389b41a098bc06110
+  aiTest26 :: Graphics.Vty.Attributes.Attr
+  {- Strictness: m,
+     Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Checkers.aiTest21
+                   Checkers.aiTest27
+                   (Graphics.Vty.Attributes.Default @ Data.Text.Internal.Text)) -}
+db4799e3295ecae6b9d31a2302eb96a9
+  aiTest27 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Strictness: m3,
+     Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.red) -}
+ac9d656f99916a446c8d1f6d7fff0842
+  aiTest28 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Checkers.aiTest29
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+f08c89840b446d7a551b0f24ab9e7910
+  aiTest29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Checkers.aiTest30) -}
+6663b2fed682c9b128014315746ce0b2
+  aiTest3 :: Checkers.TuiState -> Brick.AttrMap.AttrMap
+  {- Arity: 1, Strictness: <L,A>m1,
+     Unfolding: InlineRule (1, True, True)
+                (\ (ds :: Checkers.TuiState) -> Checkers.theAttributes) -}
+fdbb0b032109f3d9c5f2d6b1240e4b3e
+  aiTest30 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("redPiece"#) -}
+ea746287baba5716fad65c5cd1ce5279
+  aiTest31 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Strictness: m,
+     Unfolding: ((Checkers.oddSel, Checkers.aiTest32)) -}
+9631d217099f43a42e82c82ad4ca0311
+  aiTest32 :: Graphics.Vty.Attributes.Attr
+  {- Strictness: m,
+     Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Checkers.aiTest21
+                   Checkers.aiTest33
+                   (Graphics.Vty.Attributes.Default @ Data.Text.Internal.Text)) -}
+b5c023f00be94504e2ecc43d2bad0255
+  aiTest33 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Strictness: m3,
+     Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.brightWhite) -}
+4db5caff9141754e37733f0112ecf339
+  aiTest34 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Checkers.aiTest35
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+5f5d8e43721056dd294780ebf8ce0247
+  aiTest35 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Checkers.aiTest36) -}
+e36a764b6b50406dcfdd6f2ad1fa20d7
+  aiTest36 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("oddSel"#) -}
+fb9d57a0d1de27e1293f4ea4d032d707
+  aiTest37 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Strictness: m,
+     Unfolding: ((Checkers.evenSel, Checkers.aiTest38)) -}
+2d0ba59f34ce81c9e38e9f5be21ea866
+  aiTest38 :: Graphics.Vty.Attributes.Attr
+  {- Strictness: m,
+     Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Checkers.aiTest21
+                   Checkers.aiTest39
+                   (Graphics.Vty.Attributes.Default @ Data.Text.Internal.Text)) -}
+7af89e57c235886ea5d59629f2a1cc1f
+  aiTest39 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Strictness: m3,
+     Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.brightCyan) -}
+e48ab1bb01bc1a21df8f78371ad18ed0
+  aiTest4 ::
+    Data.Map.Internal.Map
+      Brick.AttrMap.AttrName Graphics.Vty.Attributes.Attr
+  {- Unfolding: (Brick.AttrMap.$sfromList
+                   @ Graphics.Vty.Attributes.Attr
+                   Checkers.aiTest5) -}
+0ba9f71166b52ebfd345273252f43cc4
+  aiTest40 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Checkers.aiTest41
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+8e7b1281cd4f68201f1d70034755719f
+  aiTest41 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Checkers.aiTest42) -}
+5d08330d343de68b0c4275aaddebefa1
+  aiTest42 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("evenSel"#) -}
+a764732d6afdd13211f96f8188cf5a20
+  aiTest43 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Strictness: m,
+     Unfolding: ((Checkers.oddBlock, Checkers.aiTest44)) -}
+15f52b703d5774bf0fc810f908042d1a
+  aiTest44 :: Graphics.Vty.Attributes.Attr
+  {- Strictness: m,
+     Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Checkers.aiTest21
+                   Checkers.aiTest14
+                   (Graphics.Vty.Attributes.Default @ Data.Text.Internal.Text)) -}
+c9ab7435fba0723905b5342a2545f96e
+  aiTest45 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Checkers.aiTest46
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+08343704a7c0e7fd3861215228c92679
+  aiTest46 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Checkers.aiTest47) -}
+0e51f261f88e108f919e07f3c282f28f
+  aiTest47 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("oddBlock"#) -}
+f7f60d9c8f408aa130ce523fdc4e85c9
+  aiTest48 :: (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+  {- Strictness: m,
+     Unfolding: ((Checkers.evenBlock, Checkers.aiTest49)) -}
+51072b556653188ac1b815aa953a5fab
+  aiTest49 :: Graphics.Vty.Attributes.Attr
+  {- Strictness: m,
+     Unfolding: (Graphics.Vty.Attributes.Attr
+                   (Graphics.Vty.Attributes.Default @ Graphics.Vty.Attributes.Style)
+                   Checkers.aiTest21
+                   Checkers.aiTest50
+                   (Graphics.Vty.Attributes.Default @ Data.Text.Internal.Text)) -}
+c690bb4c5bf69c1aaf93e769516dc62a
+  aiTest5 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Checkers.aiTest48
+                   Checkers.aiTest6) -}
+6928756c6195058abc61dd4a3dc0817a
+  aiTest50 ::
+    Graphics.Vty.Attributes.MaybeDefault
+      Graphics.Vty.Attributes.Color.Color
+  {- Strictness: m3,
+     Unfolding: (Graphics.Vty.Attributes.SetTo
+                   @ Graphics.Vty.Attributes.Color.Color
+                   Graphics.Vty.Attributes.Color.$fEqColor
+                   Graphics.Vty.Attributes.Color.$fShowColor
+                   Graphics.Vty.Attributes.Color.$fReadColor
+                   Graphics.Vty.Attributes.Color.brightBlue) -}
+e6ed11be59069e90757bfca48abbba8d
+  aiTest51 :: [GHC.Base.String]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Base.String
+                   Checkers.aiTest52
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+1ee38d036cef73dfc4bc8bfaf05c6ed6
+  aiTest52 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Checkers.aiTest53) -}
+fc4e396f32e941b8b953d0d937129bbf
+  aiTest53 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("evenBlock"#) -}
+79ad65b63dfec471987d485b6f91f0c0
+  aiTest6 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Checkers.aiTest43
+                   Checkers.aiTest7) -}
+46fe78f90483893919e008d79abd208c
+  aiTest7 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Checkers.aiTest37
+                   Checkers.aiTest8) -}
+f26910ab7857ffde44680e66421c400c
+  aiTest8 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Checkers.aiTest31
+                   Checkers.aiTest9) -}
+168a2e70b3d6b863230876d1094759f6
+  aiTest9 :: [(Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Brick.AttrMap.AttrName, Graphics.Vty.Attributes.Attr)
+                   Checkers.aiTest25
+                   Checkers.aiTest10) -}
+2f67053ae249888547d04c977847e457
+  blackAi ::
+    GameLogic.AiMove
+    -> GameLogic.ApplyMove -> GameLogic.GameState -> GHC.Types.IO ()
+  {- Arity: 4, Strictness: <L,U><L,U><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Checkers.blackAi1
+                  `cast`
+                (<GameLogic.AiMove>_R
+                 ->_R <GameLogic.ApplyMove>_R
+                 ->_R <GameLogic.GameState>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+9a98522b4d1fdbab61565d00a99c85ec
+  blackAi1 ::
+    GameLogic.AiMove
+    -> GameLogic.ApplyMove
+    -> GameLogic.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 4, Strictness: <L,U><L,U><L,U><S,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ (b :: GameLogic.AiMove)
+                   (eta :: GameLogic.ApplyMove)
+                   (eta1 :: GameLogic.GameState)
+                   (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 Checkers.aiTest2 GameLogic.Human (GameLogic.AI b) eta eta1 eta2) -}
+82379bdab7af88a70687eb62ebfa3ad8
+  blackPiece :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Checkers.aiTest22) -}
+2a90d006c66bcc316a7726e1be1bba24
+  cpuTuiEvent ::
+    Checkers.TuiState
+    -> Brick.Types.Internal.BrickEvent n e
+    -> Brick.Types.EventM
+         n (Brick.Types.Internal.Next Checkers.TuiState)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U(U,U,U,U,U,U)><S,1*U>,
+     Unfolding: (\ @ n
+                   @ e
+                   (s :: Checkers.TuiState)
+                   (e1 :: Brick.Types.Internal.BrickEvent n e) ->
+                 case e1 of wild {
+                   DEFAULT
+                   -> (Brick.Main.continue1 @ Checkers.TuiState @ n s)
+                        `cast`
+                      ((<Brick.Types.Internal.EventRO n>_R
+                        ->_R (<Brick.Types.Internal.EventState n>_R
+                              ->_R Sym (GHC.Types.N:IO[0]
+                                            <(Brick.Types.Internal.Next Checkers.TuiState,
+                                              Brick.Types.Internal.EventState
+                                                n)>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                   <Brick.Types.Internal.EventState
+                                                                      n>_N
+                                                                   <GHC.Types.IO>_R
+                                                                   <Brick.Types.Internal.Next
+                                                                      Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                         <*>_N
+                                                                                                         <Brick.Types.Internal.EventRO
+                                                                                                            n>_R
+                                                                                                         <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                            (Brick.Types.Internal.EventState
+                                                                                                               n)
+                                                                                                            GHC.Types.IO>_R
+                                                                                                         <Brick.Types.Internal.Next
+                                                                                                            Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                             <n>_N) <Brick.Types.Internal.Next
+                                                                                                                                                       Checkers.TuiState>_N))
+                   Brick.Types.Internal.VtyEvent vtye
+                   -> case vtye of wild1 {
+                        DEFAULT
+                        -> (Brick.Main.continue1 @ Checkers.TuiState @ n s)
+                             `cast`
+                           ((<Brick.Types.Internal.EventRO n>_R
+                             ->_R (<Brick.Types.Internal.EventState n>_R
+                                   ->_R Sym (GHC.Types.N:IO[0]
+                                                 <(Brick.Types.Internal.Next Checkers.TuiState,
+                                                   Brick.Types.Internal.EventState
+                                                     n)>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                        <Brick.Types.Internal.EventState
+                                                                           n>_N
+                                                                        <GHC.Types.IO>_R
+                                                                        <Brick.Types.Internal.Next
+                                                                           Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                              <*>_N
+                                                                                                              <Brick.Types.Internal.EventRO
+                                                                                                                 n>_R
+                                                                                                              <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                                 (Brick.Types.Internal.EventState
+                                                                                                                    n)
+                                                                                                                 GHC.Types.IO>_R
+                                                                                                              <Brick.Types.Internal.Next
+                                                                                                                 Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                                  <n>_N) <Brick.Types.Internal.Next
+                                                                                                                                                            Checkers.TuiState>_N))
+                        Graphics.Vty.Input.Events.EvKey ds ds1
+                        -> case ds of wild2 {
+                             DEFAULT
+                             -> (Brick.Main.continue1 @ Checkers.TuiState @ n s)
+                                  `cast`
+                                ((<Brick.Types.Internal.EventRO n>_R
+                                  ->_R (<Brick.Types.Internal.EventState n>_R
+                                        ->_R Sym (GHC.Types.N:IO[0]
+                                                      <(Brick.Types.Internal.Next Checkers.TuiState,
+                                                        Brick.Types.Internal.EventState
+                                                          n)>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                             <Brick.Types.Internal.EventState
+                                                                                n>_N
+                                                                             <GHC.Types.IO>_R
+                                                                             <Brick.Types.Internal.Next
+                                                                                Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                                   <*>_N
+                                                                                                                   <Brick.Types.Internal.EventRO
+                                                                                                                      n>_R
+                                                                                                                   <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                                      (Brick.Types.Internal.EventState
+                                                                                                                         n)
+                                                                                                                      GHC.Types.IO>_R
+                                                                                                                   <Brick.Types.Internal.Next
+                                                                                                                      Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                                       <n>_N) <Brick.Types.Internal.Next
+                                                                                                                                                                 Checkers.TuiState>_N))
+                             Graphics.Vty.Input.Events.KChar ds2
+                             -> case ds2 of wild3 { GHC.Types.C# ds3 ->
+                                case ds3 of ds4 {
+                                  DEFAULT
+                                  -> (Brick.Main.continue1 @ Checkers.TuiState @ n s)
+                                       `cast`
+                                     ((<Brick.Types.Internal.EventRO n>_R
+                                       ->_R (<Brick.Types.Internal.EventState n>_R
+                                             ->_R Sym (GHC.Types.N:IO[0]
+                                                           <(Brick.Types.Internal.Next
+                                                               Checkers.TuiState,
+                                                             Brick.Types.Internal.EventState
+                                                               n)>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                  <Brick.Types.Internal.EventState
+                                                                                     n>_N
+                                                                                  <GHC.Types.IO>_R
+                                                                                  <Brick.Types.Internal.Next
+                                                                                     Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                                        <*>_N
+                                                                                                                        <Brick.Types.Internal.EventRO
+                                                                                                                           n>_R
+                                                                                                                        <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                                           (Brick.Types.Internal.EventState
+                                                                                                                              n)
+                                                                                                                           GHC.Types.IO>_R
+                                                                                                                        <Brick.Types.Internal.Next
+                                                                                                                           Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                                            <n>_N) <Brick.Types.Internal.Next
+                                                                                                                                                                      Checkers.TuiState>_N))
+                                  'q'#
+                                  -> case ds1 of wild4 {
+                                       []
+                                       -> (Brick.Main.halt1 @ Checkers.TuiState @ n s)
+                                            `cast`
+                                          ((<Brick.Types.Internal.EventRO n>_R
+                                            ->_R (<Brick.Types.Internal.EventState n>_R
+                                                  ->_R Sym (GHC.Types.N:IO[0]
+                                                                <(Brick.Types.Internal.Next
+                                                                    Checkers.TuiState,
+                                                                  Brick.Types.Internal.EventState
+                                                                    n)>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                       <Brick.Types.Internal.EventState
+                                                                                          n>_N
+                                                                                       <GHC.Types.IO>_R
+                                                                                       <Brick.Types.Internal.Next
+                                                                                          Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                                             <*>_N
+                                                                                                                             <Brick.Types.Internal.EventRO
+                                                                                                                                n>_R
+                                                                                                                             <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                                                (Brick.Types.Internal.EventState
+                                                                                                                                   n)
+                                                                                                                                GHC.Types.IO>_R
+                                                                                                                             <Brick.Types.Internal.Next
+                                                                                                                                Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                                                 <n>_N) <Brick.Types.Internal.Next
+                                                                                                                                                                           Checkers.TuiState>_N))
+                                       : ipv ipv1
+                                       -> (Brick.Main.continue1 @ Checkers.TuiState @ n s)
+                                            `cast`
+                                          ((<Brick.Types.Internal.EventRO n>_R
+                                            ->_R (<Brick.Types.Internal.EventState n>_R
+                                                  ->_R Sym (GHC.Types.N:IO[0]
+                                                                <(Brick.Types.Internal.Next
+                                                                    Checkers.TuiState,
+                                                                  Brick.Types.Internal.EventState
+                                                                    n)>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                       <Brick.Types.Internal.EventState
+                                                                                          n>_N
+                                                                                       <GHC.Types.IO>_R
+                                                                                       <Brick.Types.Internal.Next
+                                                                                          Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                                             <*>_N
+                                                                                                                             <Brick.Types.Internal.EventRO
+                                                                                                                                n>_R
+                                                                                                                             <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                                                (Brick.Types.Internal.EventState
+                                                                                                                                   n)
+                                                                                                                                GHC.Types.IO>_R
+                                                                                                                             <Brick.Types.Internal.Next
+                                                                                                                                Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                                                 <n>_N) <Brick.Types.Internal.Next
+                                                                                                                                                                           Checkers.TuiState>_N)) } } }
+                             Graphics.Vty.Input.Events.KEnter
+                             -> case ds1 of wild3 {
+                                  []
+                                  -> let {
+                                       x :: Data.Functor.Identity.Identity Checkers.TuiState
+                                       = case s of wild4 { Checkers.TuiState x1 x2 x3 x4 x5 x6 ->
+                                         (Checkers.TuiState
+                                            x1
+                                            (GHC.Types.[] @ GameLogic.Coord)
+                                            (x6 x2 x3)
+                                            x4
+                                            x5
+                                            x6)
+                                           `cast`
+                                         (Sym (Data.Functor.Identity.N:Identity[0]
+                                                   <Checkers.TuiState>_R)) }
+                                     } in
+                                     let {
+                                       lvl39 :: Brick.Types.Internal.Next Checkers.TuiState
+                                       = Brick.Types.Internal.Continue
+                                           @ Checkers.TuiState
+                                           x `cast`
+                                           (Data.Functor.Identity.N:Identity[0]
+                                                <Checkers.TuiState>_R)
+                                     } in
+                                     (\ (eta :: Brick.Types.Internal.EventRO n)
+                                        (eta1 :: Brick.Types.Internal.EventState n)
+                                        (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                                      (# eta2, (lvl39, eta1) #))
+                                       `cast`
+                                     ((<Brick.Types.Internal.EventRO n>_R
+                                       ->_R (<Brick.Types.Internal.EventState n>_R
+                                             ->_R Sym (GHC.Types.N:IO[0]
+                                                           <(Brick.Types.Internal.Next
+                                                               Checkers.TuiState,
+                                                             Brick.Types.Internal.EventState
+                                                               n)>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                  <Brick.Types.Internal.EventState
+                                                                                     n>_N
+                                                                                  <GHC.Types.IO>_R
+                                                                                  <Brick.Types.Internal.Next
+                                                                                     Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                                        <*>_N
+                                                                                                                        <Brick.Types.Internal.EventRO
+                                                                                                                           n>_R
+                                                                                                                        <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                                           (Brick.Types.Internal.EventState
+                                                                                                                              n)
+                                                                                                                           GHC.Types.IO>_R
+                                                                                                                        <Brick.Types.Internal.Next
+                                                                                                                           Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                                            <n>_N) <Brick.Types.Internal.Next
+                                                                                                                                                                      Checkers.TuiState>_N))
+                                  : ipv ipv1
+                                  -> (Brick.Main.continue1 @ Checkers.TuiState @ n s)
+                                       `cast`
+                                     ((<Brick.Types.Internal.EventRO n>_R
+                                       ->_R (<Brick.Types.Internal.EventState n>_R
+                                             ->_R Sym (GHC.Types.N:IO[0]
+                                                           <(Brick.Types.Internal.Next
+                                                               Checkers.TuiState,
+                                                             Brick.Types.Internal.EventState
+                                                               n)>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                  <Brick.Types.Internal.EventState
+                                                                                     n>_N
+                                                                                  <GHC.Types.IO>_R
+                                                                                  <Brick.Types.Internal.Next
+                                                                                     Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                                        <*>_N
+                                                                                                                        <Brick.Types.Internal.EventRO
+                                                                                                                           n>_R
+                                                                                                                        <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                                           (Brick.Types.Internal.EventState
+                                                                                                                              n)
+                                                                                                                           GHC.Types.IO>_R
+                                                                                                                        <Brick.Types.Internal.Next
+                                                                                                                           Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                                            <n>_N) <Brick.Types.Internal.Next
+                                                                                                                                                                      Checkers.TuiState>_N)) } } } }) -}
+0ded9e90fba6acf3ec2e540f053c504c
+  drawTui ::
+    Checkers.TuiState -> [Brick.Types.Widget Checkers.ResourceName]
+  {- Arity: 1,
+     Strictness: <S(LLS(LLLLSL)LLL),1*U(U(U,U(U,U(U(U),U(U)),U),U),1*U,1*U(1*U,1*U,U,U,1*U,1*U),A,A,A)>m2,
+     Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Checkers.TuiState) ->
+                 case w of ww { Checkers.TuiState ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 case ww3 of ww7 { GameLogic.GameState ww8 ww9 ww10 ww11 ww12 ww13 ->
+                 case Checkers.$wdrawTui
+                        ww1
+                        ww2
+                        ww8
+                        ww9
+                        ww10
+                        ww11
+                        ww12
+                        ww13 of ww14 { (#,#) ww15 ww16 ->
+                 GHC.Types.:
+                   @ (Brick.Types.Widget Checkers.ResourceName)
+                   ww15
+                   ww16 } } }) -}
+5f3a4c210f0085a70c83bbb66b730f72
+  evenBlock :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Checkers.aiTest51) -}
+fc30f4360cfbeafa14c066ea6596b1f0
+  evenSel :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Checkers.aiTest40) -}
+fd29f7f5525427fbf65975c9151162e5
+  handleTuiEvent ::
+    Checkers.TuiState
+    -> Brick.Types.Internal.BrickEvent n e
+    -> Brick.Types.EventM
+         n (Brick.Types.Internal.Next Checkers.TuiState)
+  {- Arity: 1,
+     Strictness: <S(LLS(LLLLSL)LLL),1*U(U(U,U(U,U,U),U),U,U(U,U,U,U,U,U),U,U,U)>,
+     Unfolding: (\ @ n @ e (s :: Checkers.TuiState) ->
+                 case s of wild { Checkers.TuiState x x1 x2 x3 x4 x5 ->
+                 case x2 of wild1 { GameLogic.GameState x6 x7 x8 x9 x10 x11 ->
+                 case x10 of wild2 {
+                   GameLogic.Red
+                   -> case x3 of wild3 {
+                        GameLogic.Human -> Checkers.humanTuiEvent @ n @ e wild
+                        GameLogic.AI f
+                        -> Checkers.cpuTuiEvent
+                             @ n
+                             @ e
+                             (Checkers.TuiState x (f wild1) wild1 wild3 x4 x5) }
+                   GameLogic.Black
+                   -> case x4 of wild3 {
+                        GameLogic.Human -> Checkers.humanTuiEvent @ n @ e wild
+                        GameLogic.AI f
+                        -> Checkers.cpuTuiEvent
+                             @ n
+                             @ e
+                             (Checkers.TuiState x (f wild1) wild1 x3 wild3 x5) }
+                   GameLogic.GameOver
+                   -> let {
+                        lvl39 :: Checkers.TuiState
+                        = Checkers.TuiState
+                            Checkers.initialBoard
+                            (GHC.Types.[] @ GameLogic.Coord)
+                            GameLogic.initialGameState
+                            x3
+                            x4
+                            x5
+                      } in
+                      let {
+                        lvl40 :: Brick.Types.Internal.Next Checkers.TuiState
+                        = Brick.Types.Internal.Continue @ Checkers.TuiState lvl39
+                      } in
+                      let {
+                        lvl41 :: Brick.Types.Internal.Next Checkers.TuiState
+                        = Brick.Types.Internal.Continue @ Checkers.TuiState wild
+                      } in
+                      let {
+                        lvl42 :: Brick.Types.Internal.Next Checkers.TuiState
+                        = Brick.Types.Internal.Halt @ Checkers.TuiState wild
+                      } in
+                      (\ (e1 :: Brick.Types.Internal.BrickEvent n e)
+                         (eta :: Brick.Types.Internal.EventRO n)
+                         (eta1 :: Brick.Types.Internal.EventState n)
+                         (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                       case e1 of wild3 {
+                         DEFAULT -> (# eta2, (lvl41, eta1) #)
+                         Brick.Types.Internal.VtyEvent vtye
+                         -> case vtye of wild4 {
+                              DEFAULT -> (# eta2, (lvl41, eta1) #)
+                              Graphics.Vty.Input.Events.EvKey ds ds1
+                              -> case ds of wild5 {
+                                   DEFAULT -> (# eta2, (lvl41, eta1) #)
+                                   Graphics.Vty.Input.Events.KChar ds2
+                                   -> case ds2 of wild6 { GHC.Types.C# ds3 ->
+                                      case ds3 of ds4 {
+                                        DEFAULT -> (# eta2, (lvl41, eta1) #)
+                                        'n'#
+                                        -> case ds1 of wild7 {
+                                             [] -> (# eta2, (lvl40, eta1) #)
+                                             : ipv ipv1 -> (# eta2, (lvl41, eta1) #) }
+                                        'q'#
+                                        -> case ds1 of wild7 {
+                                             [] -> (# eta2, (lvl42, eta1) #)
+                                             : ipv ipv1 -> (# eta2, (lvl41, eta1) #) } } } } } })
+                        `cast`
+                      (<Brick.Types.Internal.BrickEvent n e>_R
+                       ->_R (<Brick.Types.Internal.EventRO n>_R
+                             ->_R (<Brick.Types.Internal.EventState n>_R
+                                   ->_R Sym (GHC.Types.N:IO[0]
+                                                 <(Brick.Types.Internal.Next Checkers.TuiState,
+                                                   Brick.Types.Internal.EventState
+                                                     n)>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                        <Brick.Types.Internal.EventState
+                                                                           n>_N
+                                                                        <GHC.Types.IO>_R
+                                                                        <Brick.Types.Internal.Next
+                                                                           Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                              <*>_N
+                                                                                                              <Brick.Types.Internal.EventRO
+                                                                                                                 n>_R
+                                                                                                              <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                                 (Brick.Types.Internal.EventState
+                                                                                                                    n)
+                                                                                                                 GHC.Types.IO>_R
+                                                                                                              <Brick.Types.Internal.Next
+                                                                                                                 Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                                  <n>_N) <Brick.Types.Internal.Next
+                                                                                                                                                            Checkers.TuiState>_N)) } } }) -}
+63d30072e7e7ed6d50f234fea6141e61
+  human ::
+    GameLogic.ApplyMove -> GameLogic.GameState -> GHC.Types.IO ()
+  {- Arity: 3,
+     Unfolding: InlineRule (0, True, True)
+                Checkers.human1
+                  `cast`
+                (<GameLogic.ApplyMove>_R
+                 ->_R <GameLogic.GameState>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+bee130b6e20acdeabf3ede8380fe3639
+  human1 ::
+    GameLogic.ApplyMove
+    -> GameLogic.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3,
+     Unfolding: (Checkers.aiTest2 GameLogic.Human GameLogic.Human) -}
+68b8a71a9d411232281c21791059a4af
+  humanTuiEvent ::
+    Checkers.TuiState
+    -> Brick.Types.Internal.BrickEvent n e
+    -> Brick.Types.EventM
+         n (Brick.Types.Internal.Next Checkers.TuiState)
+  {- Arity: 2, Strictness: <L,U(U(U,U(U,U,U),U),U,U,U,U,U)><S,1*U> -}
+3721d6c8744417e2affd44312c40fa46
+  initialBoard ::
+    Cursor.Simple.List.NonEmpty.NonEmptyCursor
+      (Cursor.Simple.List.NonEmpty.NonEmptyCursor GameLogic.Coord)
+  {- Unfolding: (case Checkers.$wgo 0# of ww { (#,#) ww1 ww2 ->
+                 case Cursor.List.NonEmpty.$wapplyNonEmptySelection
+                        @ (Cursor.Simple.List.NonEmpty.NonEmptyCursor
+                             (GHC.Types.Int, GHC.Types.Int))
+                        ww1
+                        ww2
+                        0# of wild {
+                   GHC.Base.Nothing
+                   -> case Data.Maybe.fromJust1
+                      ret_ty (Cursor.Simple.List.NonEmpty.NonEmptyCursor
+                                (Cursor.Simple.List.NonEmpty.NonEmptyCursor
+                                   (GHC.Types.Int, GHC.Types.Int)))
+                      of {}
+                   GHC.Base.Just x
+                   -> case x of wild1 { (,,) l m r ->
+                      Cursor.List.NonEmpty.NonEmptyCursor
+                        @ (Cursor.Simple.List.NonEmpty.NonEmptyCursor
+                             (GHC.Types.Int, GHC.Types.Int))
+                        @ (Cursor.Simple.List.NonEmpty.NonEmptyCursor
+                             (GHC.Types.Int, GHC.Types.Int))
+                        (GHC.List.reverse
+                           @ (Cursor.Simple.List.NonEmpty.NonEmptyCursor
+                                (GHC.Types.Int, GHC.Types.Int))
+                           l)
+                        m
+                        r } } }) -}
+2afb07f86ded443e0ee5cf125580393f
+  oddBlock :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Checkers.aiTest45) -}
+0f84ac2981cb783011a5ac0f39c764f4
+  oddSel :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Checkers.aiTest34) -}
+896156762a5d8896455badb7af461d69
+  plain :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Checkers.aiTest16) -}
+62e228bc3e507e245234ec9e27cc9534
+  redAi ::
+    GameLogic.AiMove
+    -> GameLogic.ApplyMove -> GameLogic.GameState -> GHC.Types.IO ()
+  {- Arity: 4, Strictness: <L,U><L,U><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Checkers.redAi1
+                  `cast`
+                (<GameLogic.AiMove>_R
+                 ->_R <GameLogic.ApplyMove>_R
+                 ->_R <GameLogic.GameState>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+c3231ee234c9833cff3133a6f0c4edbe
+  redAi1 ::
+    GameLogic.AiMove
+    -> GameLogic.ApplyMove
+    -> GameLogic.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 4, Strictness: <L,U><L,U><L,U><S,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ (r :: GameLogic.AiMove)
+                   (eta :: GameLogic.ApplyMove)
+                   (eta1 :: GameLogic.GameState)
+                   (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 Checkers.aiTest2 (GameLogic.AI r) GameLogic.Human eta eta1 eta2) -}
+2bb8f15d53a3d3af85b8b8d6e42a70cc
+  redPiece :: Brick.AttrMap.AttrName
+  {- Strictness: m,
+     Unfolding: (Brick.AttrMap.AttrName Checkers.aiTest28) -}
+9b8e4fff47cb9370baeb452a1ff43b21
+  theAttributes :: Brick.AttrMap.AttrMap
+  {- Strictness: m1,
+     Unfolding: (Brick.AttrMap.AttrMap
+                   Graphics.Vty.Attributes.defAttr
+                   Checkers.aiTest4) -}
+05364bd58756a084ab7419a861717511
+  tui :: GHC.Types.IO ()
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Checkers.tui1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+4eb841e19427d7c5b6a9cfdd4e7e334b
+  tui1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Checkers.aiTest2
+                   GameLogic.Human
+                   GameLogic.Human
+                   GameLogic.applyMove
+                   GameLogic.initialGameState) -}
+820488f50186be292d1d54ac00455112
+  tuiApp :: Brick.Main.App Checkers.TuiState e Checkers.ResourceName
+  {- Strictness: m,
+     Unfolding: (\ @ e ->
+                 Brick.Main.App
+                   @ Checkers.TuiState
+                   @ e
+                   @ Checkers.ResourceName
+                   Checkers.drawTui
+                   (Brick.Main.showFirstCursor
+                      @ Checkers.TuiState
+                      @ Checkers.ResourceName)
+                   (Checkers.handleTuiEvent @ Checkers.ResourceName @ e)
+                   (Brick.Types.$fApplicativeEventM5
+                      @ Checkers.TuiState
+                      @ [GHC.Types.Char])
+                     `cast`
+                   (<Checkers.TuiState>_R
+                    ->_R (<Brick.Types.Internal.EventRO [GHC.Types.Char]>_R
+                          ->_R (<Brick.Types.Internal.EventState [GHC.Types.Char]>_R
+                                ->_R Sym (GHC.Types.N:IO[0]
+                                              <(Checkers.TuiState,
+                                                Brick.Types.Internal.EventState
+                                                  [GHC.Types.Char])>_R)) ; Sym (Control.Monad.Trans.State.Lazy.N:StateT[0]
+                                                                                    <Brick.Types.Internal.EventState
+                                                                                       [GHC.Types.Char]>_N
+                                                                                    <GHC.Types.IO>_R
+                                                                                    <Checkers.TuiState>_N)) ; (Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                                                        <*>_N
+                                                                                                                        <Brick.Types.Internal.EventRO
+                                                                                                                           [GHC.Types.Char]>_R
+                                                                                                                        <Control.Monad.Trans.State.Lazy.StateT
+                                                                                                                           (Brick.Types.Internal.EventState
+                                                                                                                              [GHC.Types.Char])
+                                                                                                                           GHC.Types.IO>_R
+                                                                                                                        <Checkers.TuiState>_N) ; Sym (Brick.Types.N:EventM[0]
+                                                                                                                                                          <[GHC.Types.Char]>_N) <Checkers.TuiState>_N))
+                   Checkers.aiTest3) -}
+"SPEC/Checkers $fEq(,) @ Int @ Int" [orphan] forall (v1 :: GHC.Classes.Eq
+                                                             GHC.Types.Int)
+                                                    (v :: GHC.Classes.Eq GHC.Types.Int)
+  GHC.Classes.$fEq(,) @ GHC.Types.Int @ GHC.Types.Int v v1
+  = Checkers.$s$fEq(,)
+"SPEC/Checkers $fEq(,)_$c/= @ Int @ Int" [orphan] forall ($dEq1 :: GHC.Classes.Eq
+                                                                     GHC.Types.Int)
+                                                         ($dEq :: GHC.Classes.Eq GHC.Types.Int)
+  GHC.Classes.$fEq(,)_$c/= @ GHC.Types.Int @ GHC.Types.Int $dEq $dEq1
+  = Checkers.$s$fEq(,)_$s$fEq(,)_$c/=
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

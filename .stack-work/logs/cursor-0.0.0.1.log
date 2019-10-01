@@ -1,0 +1,31 @@
+Configuring cursor-0.0.0.1...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for cursor-0.0.0.1..
+Building library for cursor-0.0.0.1..
+[ 1 of 25] Compiling Cursor.List      ( src/Cursor/List.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/List.o )
+[ 2 of 25] Compiling Cursor.Map.KeyValue ( src/Cursor/Map/KeyValue.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Map/KeyValue.o )
+[ 3 of 25] Compiling Cursor.Simple.Map.KeyValue ( src/Cursor/Simple/Map/KeyValue.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Simple/Map/KeyValue.o )
+[ 4 of 25] Compiling Cursor.Text      ( src/Cursor/Text.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Text.o )
+[ 5 of 25] Compiling Cursor.Tree.Types ( src/Cursor/Tree/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Types.o )
+[ 6 of 25] Compiling Cursor.Tree.Swap ( src/Cursor/Tree/Swap.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Swap.o )
+[ 7 of 25] Compiling Cursor.Tree.Draw ( src/Cursor/Tree/Draw.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Draw.o )
+[ 8 of 25] Compiling Cursor.Tree.Collapse ( src/Cursor/Tree/Collapse.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Collapse.o )
+[ 9 of 25] Compiling Cursor.Tree.Base ( src/Cursor/Tree/Base.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Base.o )
+[10 of 25] Compiling Cursor.Tree.Promote ( src/Cursor/Tree/Promote.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Promote.o )
+[11 of 25] Compiling Cursor.Tree.Movement ( src/Cursor/Tree/Movement.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Movement.o )
+[12 of 25] Compiling Cursor.Tree.Insert ( src/Cursor/Tree/Insert.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Insert.o )
+[13 of 25] Compiling Cursor.Tree.Demote ( src/Cursor/Tree/Demote.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Demote.o )
+[14 of 25] Compiling Cursor.Types     ( src/Cursor/Types.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Types.o )
+[15 of 25] Compiling Cursor.Tree.Delete ( src/Cursor/Tree/Delete.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree/Delete.o )
+[16 of 25] Compiling Cursor.Tree      ( src/Cursor/Tree.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Tree.o )
+[17 of 25] Compiling Cursor.Simple.Tree ( src/Cursor/Simple/Tree.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Simple/Tree.o )
+[18 of 25] Compiling Cursor.List.NonEmpty ( src/Cursor/List/NonEmpty.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/List/NonEmpty.o )
+[19 of 25] Compiling Cursor.TextField ( src/Cursor/TextField.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/TextField.o )
+[20 of 25] Compiling Cursor.Simple.List.NonEmpty ( src/Cursor/Simple/List/NonEmpty.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Simple/List/NonEmpty.o )
+[21 of 25] Compiling Cursor.Map       ( src/Cursor/Map.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Map.o )
+[22 of 25] Compiling Cursor.Simple.Map ( src/Cursor/Simple/Map.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Simple/Map.o )
+[23 of 25] Compiling Cursor.Forest    ( src/Cursor/Forest.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Forest.o )
+[24 of 25] Compiling Cursor.Simple.Forest ( src/Cursor/Simple/Forest.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Cursor/Simple/Forest.o )
+[25 of 25] Compiling Paths_cursor     ( .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/autogen/Paths_cursor.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Paths_cursor.o )
+Installing library in /Users/benjamin.macadam/Teaching/Haskell-Checkers-Frontend/.stack-work/install/x86_64-osx/lts-12.18/8.4.4/lib/x86_64-osx-ghc-8.4.4/cursor-0.0.0.1-GXEgYw6os439U51oBhh4Ql
+Registering library for cursor-0.0.0.1..

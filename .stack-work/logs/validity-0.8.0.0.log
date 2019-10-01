@@ -1,0 +1,9 @@
+Configuring validity-0.8.0.0...
+clang: warning: argument unused during compilation: '-nopie' [-Wunused-command-line-argument]
+Preprocessing library for validity-0.8.0.0..
+Building library for validity-0.8.0.0..
+[1 of 3] Compiling Data.RelativeValidity ( src/Data/RelativeValidity.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/RelativeValidity.o )
+[2 of 3] Compiling Data.Validity    ( src/Data/Validity.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Data/Validity.o )
+[3 of 3] Compiling Paths_validity   ( .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/autogen/Paths_validity.hs, .stack-work/dist/x86_64-osx/Cabal-2.2.0.1/build/Paths_validity.o )
+Installing library in /Users/benjamin.macadam/Teaching/Haskell-Checkers-Frontend/.stack-work/install/x86_64-osx/lts-12.18/8.4.4/lib/x86_64-osx-ghc-8.4.4/validity-0.8.0.0-Ims7bKHeCvjFhmZD64idrU
+Registering library for validity-0.8.0.0..

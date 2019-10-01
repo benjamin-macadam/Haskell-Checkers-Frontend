@@ -1,0 +1,1129 @@
+
+==================== FINAL INTERFACE ====================
+2019-09-27 15:50:48.036653 UTC
+
+interface tui-0.0.0.1-4nH3Tw41p0IFkTdq2m9BjA:GameLogic 8044
+  interface hash: 31346cfc339370267b3b538a62df4059
+  ABI hash: 2b55c2327a426a831e70cca79d0e3d7f
+  export-list hash: ee4331d29c81232f8ba905c20bfe152b
+  orphan hash: 8052ef383a75eaa3dd5b1f2e9be7a836
+  flag hash: 8543ba50a870845a8c0106ea7121b1ef
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: True
+  where
+exports:
+  GameLogic.applyMove
+  GameLogic.blackInit
+  GameLogic.blackKings
+  GameLogic.blackPieces
+  GameLogic.initialGameState
+  GameLogic.message
+  GameLogic.redInit
+  GameLogic.redKings
+  GameLogic.redPieces
+  GameLogic.setMessage
+  GameLogic.status
+  GameLogic.AiMove
+  GameLogic.ApplyMove
+  GameLogic.Coord
+  GameLogic.GameState{GameLogic.GameState _blackKings _blackPieces _message _redKings _redPieces _status}
+  GameLogic.Move
+  GameLogic.MoveType{GameLogic.AI GameLogic.Human}
+  GameLogic.Status{GameLogic.Black GameLogic.GameOver GameLogic.Red}
+module dependencies:
+package dependencies: array-0.5.2.0 base-4.11.1.0 binary-0.8.5.1
+                      bytestring-0.10.8.2 containers-0.5.11.0 deepseq-1.4.3.0
+                      ghc-boot-th-8.4.4 ghc-prim-0.5.2.0 hashable-1.2.7.0
+                      integer-gmp-1.0.2.0 microlens-0.4.9.1 microlens-ghc-0.4.9.1
+                      microlens-mtl-0.1.11.1 microlens-platform-0.3.10
+                      microlens-th-0.4.2.3 mtl-2.2.2 pretty-1.1.3.6 primitive-0.6.3.0
+                      template-haskell-2.13.0.0 text-1.2.3.1 th-abstraction-0.2.8.0
+                      transformers-0.5.5.0 unordered-containers-0.2.9.0 vector-0.12.0.1
+orphans: microlens-platform-0.3.10:Lens.Micro.Platform
+         microlens-ghc-0.4.9.1:Lens.Micro.GHC
+         hashable-1.2.7.0:Data.Hashable.Generic
+         vector-0.12.0.1:Data.Vector.Unboxed
+         vector-0.12.0.1:Data.Vector.Fusion.Bundle
+         transformers-0.5.5.0:Control.Monad.Trans.Error
+         text-1.2.3.1:Data.Text.Lazy text-1.2.3.1:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         text-1.2.3.1:Data.Text.Show base-4.11.1.0:GHC.Float
+         base-4.11.1.0:GHC.Base
+family instance modules: base-4.11.1.0:Control.Applicative
+                         base-4.11.1.0:Data.Complex base-4.11.1.0:Data.Functor.Compose
+                         base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         ghc-boot-th-8.4.4:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.4:GHC.LanguageExtensions.Type
+                         microlens-0.4.9.1:Lens.Micro.Internal
+                         microlens-ghc-0.4.9.1:Lens.Micro.GHC
+                         microlens-mtl-0.1.11.1:Lens.Micro.Mtl.Internal
+                         microlens-platform-0.3.10:Lens.Micro.Platform
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.3.0:Control.Monad.Primitive
+                         primitive-0.6.3.0:Data.Primitive.Array
+                         primitive-0.6.3.0:Data.Primitive.ByteArray
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.1:Data.Text text-1.2.3.1:Data.Text.Lazy
+                         th-abstraction-0.2.8.0:Language.Haskell.TH.Datatype
+                         unordered-containers-0.2.9.0:Data.HashMap.Base
+                         vector-0.12.0.1:Data.Vector vector-0.12.0.1:Data.Vector.Primitive
+                         vector-0.12.0.1:Data.Vector.Storable
+                         vector-0.12.0.1:Data.Vector.Unboxed
+                         vector-0.12.0.1:Data.Vector.Unboxed.Base
+import  -/  base-4.11.1.0:GHC.Base 604111500e81281298777e721c75643b
+import  -/  base-4.11.1.0:GHC.Show 73be67392447c974f19c3befd83c46c0
+import  -/  base-4.11.1.0:Prelude 0750c25585e2b797cd78291d423d39dd
+import  -/  ghc-prim-0.5.2.0:GHC.Classes 122abfcd7450c6c11602933c9ca5f80d
+import  -/  microlens-0.4.9.1:Lens.Micro 962434009a31a5b07a9c325f04604c4d
+import  -/  microlens-0.4.9.1:Lens.Micro.Type 60377ed102f710af0bf94059aa466f74
+import  -/  microlens-platform-0.3.10:Lens.Micro.Platform fd1286e3b44c1a151f8e75adfd814d2d
+import  -/  microlens-th-0.4.2.3:Lens.Micro.TH a69d1199298b8fb22a32dfd49cdaea69
+09877b8e0c9169fd2ba4756be274c99e
+  $fEqGameState :: GHC.Classes.Eq GameLogic.GameState
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ GameLogic.GameState
+                  GameLogic.$fEqGameState_$c==
+                  GameLogic.$fEqGameState_$c/= -}
+09877b8e0c9169fd2ba4756be274c99e
+  $fEqGameState_$c/= ::
+    GameLogic.GameState -> GameLogic.GameState -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLLL),1*U(1*U,1*U,1*U,1*U,1*U,1*U)><S(SLLLLL),1*U(1*U,1*U,1*U,1*U,1*U,1*U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: GameLogic.GameState) (y :: GameLogic.GameState) ->
+                 case GameLogic.$fEqGameState_$c== x y of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+09877b8e0c9169fd2ba4756be274c99e
+  $fEqGameState_$c== ::
+    GameLogic.GameState -> GameLogic.GameState -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLLL),1*U(1*U,1*U,1*U,1*U,1*U,1*U)><S(SLLLLL),1*U(1*U,1*U,1*U,1*U,1*U,1*U)>,
+     Unfolding: (\ (ds :: GameLogic.GameState)
+                   (ds1 :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState a1 a2 a3 a4 a5 a6 ->
+                 case ds1 of wild1 { GameLogic.GameState b1 b2 b3 b4 b5 b6 ->
+                 case GHC.Classes.$fEq[]_$c==
+                        @ (GHC.Types.Int, GHC.Types.Int)
+                        GameLogic.$fEqGameState_$s$fEq(,)
+                        a1
+                        b1 of wild2 {
+                   GHC.Types.False -> GHC.Types.False
+                   GHC.Types.True
+                   -> case GHC.Classes.$fEq[]_$c==
+                             @ (GHC.Types.Int, GHC.Types.Int)
+                             GameLogic.$fEqGameState_$s$fEq(,)
+                             a2
+                             b2 of wild3 {
+                        GHC.Types.False -> GHC.Types.False
+                        GHC.Types.True
+                        -> case GHC.Classes.$fEq[]_$c==
+                                  @ (GHC.Types.Int, GHC.Types.Int)
+                                  GameLogic.$fEqGameState_$s$fEq(,)
+                                  a3
+                                  b3 of wild4 {
+                             GHC.Types.False -> GHC.Types.False
+                             GHC.Types.True
+                             -> case GHC.Classes.$fEq[]_$c==
+                                       @ (GHC.Types.Int, GHC.Types.Int)
+                                       GameLogic.$fEqGameState_$s$fEq(,)
+                                       a4
+                                       b4 of wild5 {
+                                  GHC.Types.False -> GHC.Types.False
+                                  GHC.Types.True
+                                  -> case a5 of wild6 {
+                                       GameLogic.Red
+                                       -> case b5 of wild7 {
+                                            DEFAULT -> GHC.Types.False
+                                            GameLogic.Red -> GHC.Base.eqString a6 b6 }
+                                       GameLogic.Black
+                                       -> case b5 of wild7 {
+                                            DEFAULT -> GHC.Types.False
+                                            GameLogic.Black -> GHC.Base.eqString a6 b6 }
+                                       GameLogic.GameOver
+                                       -> case b5 of wild7 {
+                                            DEFAULT -> GHC.Types.False
+                                            GameLogic.GameOver
+                                            -> GHC.Base.eqString a6 b6 } } } } } } } }) -}
+48fca2956766a021df027681b4d2abcf
+  $fEqGameState_$s$fEq(,) ::
+    GHC.Classes.Eq (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ (GHC.Types.Int, GHC.Types.Int)
+                  (GHC.Classes.$fEq(,)_$c==
+                     @ GHC.Types.Int
+                     @ GHC.Types.Int
+                     GHC.Classes.$fEqInt
+                     GHC.Classes.$fEqInt)
+                  GameLogic.$fEqGameState_$s$fEq(,)_$c/= -}
+c08d32b5ff268fc45b3d9bb517eb73ed
+  $fEqGameState_$s$fEq(,)_$c/= ::
+    (GHC.Types.Int, GHC.Types.Int)
+    -> (GHC.Types.Int, GHC.Types.Int) -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),1*U(U))><S(S(S)L),1*U(1*U(U),1*U(U))>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: (GHC.Types.Int, GHC.Types.Int))
+                   (y :: (GHC.Types.Int, GHC.Types.Int)) ->
+                 case x of wild { (,) a1 a2 ->
+                 case y of wild1 { (,) b1 b2 ->
+                 case GHC.Classes.eqInt a1 b1 of wild2 {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True
+                   -> case GHC.Classes.eqInt a2 b2 of wild3 {
+                        GHC.Types.False -> GHC.Types.True
+                        GHC.Types.True -> GHC.Types.False } } } }) -}
+bb3e375c9219c571d5ce46c36b5b34f4
+  $fEqStatus :: GHC.Classes.Eq GameLogic.Status
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ GameLogic.Status
+                  GameLogic.$fEqStatus_$c==
+                  GameLogic.$fEqStatus_$c/= -}
+bb3e375c9219c571d5ce46c36b5b34f4
+  $fEqStatus_$c/= ::
+    GameLogic.Status -> GameLogic.Status -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: GameLogic.Status) (y :: GameLogic.Status) ->
+                 case x of wild {
+                   GameLogic.Red
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True GameLogic.Red -> GHC.Types.False }
+                   GameLogic.Black
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True GameLogic.Black -> GHC.Types.False }
+                   GameLogic.GameOver
+                   -> case y of wild1 {
+                        DEFAULT -> GHC.Types.True
+                        GameLogic.GameOver -> GHC.Types.False } }) -}
+bb3e375c9219c571d5ce46c36b5b34f4
+  $fEqStatus_$c== ::
+    GameLogic.Status -> GameLogic.Status -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: GameLogic.Status) (ds1 :: GameLogic.Status) ->
+                 case ds of wild {
+                   GameLogic.Red
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False GameLogic.Red -> GHC.Types.True }
+                   GameLogic.Black
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False GameLogic.Black -> GHC.Types.True }
+                   GameLogic.GameOver
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        GameLogic.GameOver -> GHC.Types.True } }) -}
+09877b8e0c9169fd2ba4756be274c99e
+  $fShowGameState :: GHC.Show.Show GameLogic.GameState
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ GameLogic.GameState
+                  GameLogic.$fShowGameState_$cshowsPrec
+                  GameLogic.$fShowGameState_$cshow
+                  GameLogic.$fShowGameState_$cshowList -}
+09877b8e0c9169fd2ba4756be274c99e
+  $fShowGameState1 :: GameLogic.GameState -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U(1*U,1*U,1*U,1*U,1*U,1*U)><L,U>,
+     Unfolding: (\ (w :: GameLogic.GameState) (w1 :: GHC.Base.String) ->
+                 case w of ww { GameLogic.GameState ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 GameLogic.$w$cshowsPrec 0# ww1 ww2 ww3 ww4 ww5 ww6 w1 }) -}
+f458233cf28efcca6c59d251a3bd6431
+  $fShowGameState2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+09877b8e0c9169fd2ba4756be274c99e
+  $fShowGameState_$cshow :: GameLogic.GameState -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U,1*U,1*U,1*U,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: GameLogic.GameState) ->
+                 GameLogic.$fShowGameState_$cshowsPrec
+                   GameLogic.$fShowGameState2
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+09877b8e0c9169fd2ba4756be274c99e
+  $fShowGameState_$cshowList ::
+    [GameLogic.GameState] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [GameLogic.GameState]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ GameLogic.GameState
+                   GameLogic.$fShowGameState1
+                   ls
+                   s) -}
+09877b8e0c9169fd2ba4756be274c99e
+  $fShowGameState_$cshowsPrec ::
+    GHC.Types.Int -> GameLogic.GameState -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S(S),1*U(U)><S,1*U(1*U,1*U,1*U,1*U,1*U,1*U)><L,U>,
+     Inline: [0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: GameLogic.GameState)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { GameLogic.GameState ww3 ww4 ww5 ww6 ww7 ww8 ->
+                 GameLogic.$w$cshowsPrec ww1 ww3 ww4 ww5 ww6 ww7 ww8 w2 } }) -}
+bb3e375c9219c571d5ce46c36b5b34f4
+  $fShowStatus :: GHC.Show.Show GameLogic.Status
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ GameLogic.Status
+                  GameLogic.$fShowStatus_$cshowsPrec
+                  GameLogic.$fShowStatus_$cshow
+                  GameLogic.$fShowStatus_$cshowList -}
+24595690bffaf02dd93905eb08c0acbd
+  $fShowStatus1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   GameLogic.$fShowStatus2) -}
+6b94dae5271739c6a352817f10f22faf
+  $fShowStatus2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("GameOver"#) -}
+4d45c3043e7c1e2f18848571b8b33dc8
+  $fShowStatus3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   GameLogic.$fShowStatus4) -}
+ab62c6a4fe876ae805f8d0fb929544ad
+  $fShowStatus4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Black"#) -}
+491eb5423740d9306d774df11ca414cb
+  $fShowStatus5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   GameLogic.$fShowStatus6) -}
+61b4e34f5ad9cc549a5f8d4314102276
+  $fShowStatus6 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Red"#) -}
+bb3e375c9219c571d5ce46c36b5b34f4
+  $fShowStatus_$cshow :: GameLogic.Status -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: GameLogic.Status) ->
+                 case x of wild {
+                   GameLogic.Red -> GameLogic.$fShowStatus5
+                   GameLogic.Black -> GameLogic.$fShowStatus3
+                   GameLogic.GameOver -> GameLogic.$fShowStatus1 }) -}
+bb3e375c9219c571d5ce46c36b5b34f4
+  $fShowStatus_$cshowList :: [GameLogic.Status] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [GameLogic.Status]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__
+                   @ GameLogic.Status
+                   GameLogic.$w$cshowsPrec1
+                   ls
+                   s) -}
+bb3e375c9219c571d5ce46c36b5b34f4
+  $fShowStatus_$cshowsPrec ::
+    GHC.Types.Int -> GameLogic.Status -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: [0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: GameLogic.Status)
+                   (w2 :: GHC.Base.String) ->
+                 GameLogic.$w$cshowsPrec1 w1 w2) -}
+caab7efa2c6eb310c58fe36c28091e1d
+  $tc'AI :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10886524170470552072##
+                   18122670324310281673##
+                   GameLogic.$trModule
+                   GameLogic.$tc'AI2
+                   0#
+                   GameLogic.$tc'AI1) -}
+9965033ffa3f765bb963039da42e8d7f
+  $tc'AI1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+f49e9df1e9b9154b9574d99222fadac7
+  $tc'AI2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$tc'AI3) -}
+e2d208322e2e96f0aa740072f095bdef
+  $tc'AI3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'AI"#) -}
+5b1c238883ef0279e920346c40b75bf9
+  $tc'Black :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8076977599834452489##
+                   16700409184847641938##
+                   GameLogic.$trModule
+                   GameLogic.$tc'Black2
+                   0#
+                   GameLogic.$tc'Black1) -}
+e4c302863389414946fe7e05f336857a
+  $tc'Black1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+679b2d0c83f1d4c6805d7c64694be83c
+  $tc'Black2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$tc'Black3) -}
+c1758a35223db8ea9692159b59a52197
+  $tc'Black3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Black"#) -}
+e65d160c0dc4a2af1c4ce06a5d082e9c
+  $tc'GameOver :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12017305757420263539##
+                   10557339758948484691##
+                   GameLogic.$trModule
+                   GameLogic.$tc'GameOver1
+                   0#
+                   GameLogic.$tc'Black1) -}
+36fd4041576d5f0cea02db4923437249
+  $tc'GameOver1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$tc'GameOver2) -}
+1df6d6a4c60aa3836e38f0827a7217e6
+  $tc'GameOver2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'GameOver"#) -}
+cf9d0c31cae1bf80f7b4a13cd4d9dd7f
+  $tc'GameState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3004773077439994562##
+                   17822665183018748489##
+                   GameLogic.$trModule
+                   GameLogic.$tc'GameState2
+                   0#
+                   GameLogic.$tc'GameState1) -}
+d2402d822c8345363a74b41fd00138ec
+  $tc'GameState1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+fbd4142614e176909f3a3b4e3d8c4ef3
+  $tc'GameState2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$tc'GameState3) -}
+4a23d43508a5144505b7adc0e4003e5e
+  $tc'GameState3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'GameState"#) -}
+94b9a266890b66db8488e10713eee837
+  $tc'Human :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9885362190139834381##
+                   1355399324570369104##
+                   GameLogic.$trModule
+                   GameLogic.$tc'Human2
+                   0#
+                   GameLogic.$tc'Human1) -}
+c94009bca500e683fa14039dead620d8
+  $tc'Human1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+413bac9539abc5881f8874af8135084d
+  $tc'Human2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$tc'Human3) -}
+ae186709a61e3775cd08f7b76688a109
+  $tc'Human3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Human"#) -}
+7ce718f4cdfc14c8cc4a42ad743492cd
+  $tc'Red :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14580126866745963182##
+                   7714031033795896348##
+                   GameLogic.$trModule
+                   GameLogic.$tc'Red1
+                   0#
+                   GameLogic.$tc'Black1) -}
+f2732ab41ad227a15a9fd5c741815131
+  $tc'Red1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$tc'Red2) -}
+e3d1cb3336e56980f57a3861b0632a8b
+  $tc'Red2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Red"#) -}
+9afb6843fe1a11275f97fa79aa38d4f1
+  $tcGameState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   429351006407549988##
+                   13319422024548108220##
+                   GameLogic.$trModule
+                   GameLogic.$tcGameState1
+                   0#
+                   GHC.Types.krep$*) -}
+72424b20b3d124cffd0eb8fe3885d19e
+  $tcGameState1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$tcGameState2) -}
+181b9c31744c9b148176e342e36a6038
+  $tcGameState2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("GameState"#) -}
+a34b4c23c536350d5fb3f928d1072342
+  $tcMoveType :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16635491746248683324##
+                   617046113431707699##
+                   GameLogic.$trModule
+                   GameLogic.$tcMoveType1
+                   0#
+                   GHC.Types.krep$*) -}
+77aa48e9485ef21bf1263dd7e7a3db2e
+  $tcMoveType1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$tcMoveType2) -}
+6c9e5c91ecfcf6408d0480824825122e
+  $tcMoveType2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("MoveType"#) -}
+5767f19e8f91da6cea842cd85a16ca30
+  $tcStatus :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10807846998668887660##
+                   12952693845866900821##
+                   GameLogic.$trModule
+                   GameLogic.$tcStatus1
+                   0#
+                   GHC.Types.krep$*) -}
+958678ecd492a3d561c93deba5db23f1
+  $tcStatus1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$tcStatus2) -}
+eea5704d06a1f6d8b8bd2995d461cbe6
+  $tcStatus2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Status"#) -}
+68ba47ae0f792ea4c577e934684a7890
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   GameLogic.$trModule3
+                   GameLogic.$trModule1) -}
+926a152cb55f2e05a53dee2b1078872d
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$trModule2) -}
+c5b0cfcacc6c95c0617d1f9e25d48328
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("GameLogic"#) -}
+a630d0544a106a2f275ba13d0397cd43
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS GameLogic.$trModule4) -}
+3eb65cba98d2c0ce0f12b35f5da5e828
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("tui-0.0.0.1-4nH3Tw41p0IFkTdq2m9BjA"#) -}
+7e1c50a12726ca8f09e0a0111feb1fd9
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> [GameLogic.Coord]
+    -> [GameLogic.Coord]
+    -> [GameLogic.Coord]
+    -> [GameLogic.Coord]
+    -> GameLogic.Status
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 8,
+     Strictness: <S,U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,1*U><L,U>,
+     Inline: [0] -}
+bb3e375c9219c571d5ce46c36b5b34f4
+  $w$cshowsPrec1 ::
+    GameLogic.Status -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: GameLogic.Status) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   GameLogic.Red
+                   -> GHC.Base.++ @ GHC.Types.Char GameLogic.$fShowStatus5 w1
+                   GameLogic.Black
+                   -> GHC.Base.++ @ GHC.Types.Char GameLogic.$fShowStatus3 w1
+                   GameLogic.GameOver
+                   -> GHC.Base.++ @ GHC.Types.Char GameLogic.$fShowStatus1 w1 }) -}
+0ffd9c89adda47909860bd8448b761d4
+  type AiMove = GameLogic.GameState -> GameLogic.Move
+e32cf0b3ed800328330f270a7f696ff3
+  type ApplyMove =
+    GameLogic.Move -> GameLogic.GameState -> GameLogic.GameState
+7b6fe17d448e2ca67241ea1c02cf6f7e
+  type Coord = (GHC.Types.Int, GHC.Types.Int)
+09877b8e0c9169fd2ba4756be274c99e
+  data GameState
+    = GameState {_blackPieces :: [GameLogic.Coord],
+                 _redPieces :: [GameLogic.Coord],
+                 _blackKings :: [GameLogic.Coord],
+                 _redKings :: [GameLogic.Coord],
+                 _status :: GameLogic.Status,
+                 _message :: GHC.Base.String}
+b654bfbc26972b8f6f9a791e42f6b2a1
+  type Move = [GameLogic.Coord]
+993fa55425afb98c90a9b5426fe3e1d3
+  data MoveType = Human | AI GameLogic.AiMove
+bb3e375c9219c571d5ce46c36b5b34f4
+  data Status = Red | Black | GameOver
+09877b8e0c9169fd2ba4756be274c99e
+  _blackKings :: GameLogic.GameState -> [GameLogic.Coord]
+  RecSel Left GameLogic.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLL),1*U(A,A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds3 }) -}
+09877b8e0c9169fd2ba4756be274c99e
+  _blackPieces :: GameLogic.GameState -> [GameLogic.Coord]
+  RecSel Left GameLogic.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLL),1*U(1*U,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds1 }) -}
+09877b8e0c9169fd2ba4756be274c99e
+  _message :: GameLogic.GameState -> GHC.Base.String
+  RecSel Left GameLogic.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLS),1*U(A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds6 }) -}
+09877b8e0c9169fd2ba4756be274c99e
+  _redKings :: GameLogic.GameState -> [GameLogic.Coord]
+  RecSel Left GameLogic.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLL),1*U(A,A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds4 }) -}
+09877b8e0c9169fd2ba4756be274c99e
+  _redPieces :: GameLogic.GameState -> [GameLogic.Coord]
+  RecSel Left GameLogic.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLL),1*U(A,1*U,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds2 }) -}
+09877b8e0c9169fd2ba4756be274c99e
+  _status :: GameLogic.GameState -> GameLogic.Status
+  RecSel Left GameLogic.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState ds1 ds2 ds3 ds4 ds5 ds6 ->
+                 ds5 }) -}
+8ee8356af49f625cf1b63cf1dc3a5c4f
+  applyMove ::
+    GameLogic.Move -> GameLogic.GameState -> GameLogic.GameState
+  {- Arity: 2, Strictness: <L,A><S(LLLLSL),1*U(U,U,U,U,1*U,A)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: GameLogic.Move) (s :: GameLogic.GameState) ->
+                 case s of wild { GameLogic.GameState x x1 x2 x3 x4 x5 ->
+                 case x4 of wild1 {
+                   GameLogic.Red
+                   -> GameLogic.GameState
+                        x
+                        x1
+                        x2
+                        x3
+                        GameLogic.Black
+                        GameLogic.applyMove3
+                   GameLogic.Black
+                   -> GameLogic.GameState
+                        x
+                        x1
+                        x2
+                        x3
+                        GameLogic.Red
+                        GameLogic.applyMove1
+                   GameLogic.GameOver -> GameLogic.initialGameState } }) -}
+6b33da4949ce1555978054d3370ab040
+  applyMove1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# GameLogic.applyMove2) -}
+12590fa6a535d355d849a519e1eea2aa
+  applyMove2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Red Turn."#) -}
+f3216b3384d1ed22058b85cfb267d443
+  applyMove3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# GameLogic.applyMove4) -}
+2f2d6582e2a5d701ccdf40d0f38e562b
+  applyMove4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Black Turn."#) -}
+89a21f95869e7146c610897ec0c59641
+  blackInit :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit23
+                   GameLogic.blackInit1) -}
+0c73d5ac8b61ab6898662e0c2d56e5c0
+  blackInit1 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit22
+                   GameLogic.blackInit2) -}
+3f86fd4ed5d58a9875025fba305713c7
+  blackInit10 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit13
+                   GameLogic.blackInit11) -}
+919c53475b2a7d97d32ba48a310eb31d
+  blackInit11 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit12
+                   (GHC.Types.[] @ GameLogic.Coord)) -}
+6a7785cf9125737beab61513e381d9c6
+  blackInit12 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit21, GameLogic.redInit18)) -}
+32272cf013841348f7263c0e199e5b88
+  blackInit13 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit13, GameLogic.redInit18)) -}
+f4301f32bbe1be15a1facf50041b58a3
+  blackInit14 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit24, GameLogic.redInit18)) -}
+fe0e3d1d49048f8cf1e136d17e6b48bf
+  blackInit15 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit26, GameLogic.redInit18)) -}
+e90ca5b45a4ca0a00ad9c15b95155b53
+  blackInit16 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit14, GameLogic.redInit26)) -}
+409ba9d609ce557d772770535eb1ada4
+  blackInit17 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit16, GameLogic.redInit26)) -}
+dbdc6b2276fe8962df19905a9e007bd1
+  blackInit18 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit18, GameLogic.redInit26)) -}
+8fca9a541c7f38ebc9231dd86a4d46b3
+  blackInit19 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.$fShowGameState2, GameLogic.redInit26)) -}
+cc11537e91f39a948398d1e44b1d17a5
+  blackInit2 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit21
+                   GameLogic.blackInit3) -}
+5ac54faac13e9cf25f31f42dc77de1ff
+  blackInit20 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit21, GameLogic.$fShowGameState2)) -}
+85b9226b6441af37a4d911e142a28097
+  blackInit21 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit13, GameLogic.$fShowGameState2)) -}
+390505bf3cd9f0042c737f0707edfe02
+  blackInit22 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit24, GameLogic.$fShowGameState2)) -}
+6189a5c372eb2afc45b1f9e4fe0f0a02
+  blackInit23 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit26, GameLogic.$fShowGameState2)) -}
+8cfffbf7414fb478b4da8e28936ca15f
+  blackInit3 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit20
+                   GameLogic.blackInit4) -}
+4810b5f6a8f3667f127e6f990694958a
+  blackInit4 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit19
+                   GameLogic.blackInit5) -}
+6d6bb077e8e912f6a278eea27327d596
+  blackInit5 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit18
+                   GameLogic.blackInit6) -}
+e0895d3431141128deeeffee7b8c46f7
+  blackInit6 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit17
+                   GameLogic.blackInit7) -}
+1130e0901f618b1130b6c8e103f8031d
+  blackInit7 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit16
+                   GameLogic.blackInit8) -}
+9edd6fc9fb45ef1f84503795c5add30d
+  blackInit8 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit15
+                   GameLogic.blackInit9) -}
+bc01ab18c9fa27e405c0e2267d4ae1e7
+  blackInit9 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.blackInit14
+                   GameLogic.blackInit10) -}
+f320fbed4d0c46c347a62a1135cd28b5
+  blackKings ::
+    Lens.Micro.Type.Lens' GameLogic.GameState [GameLogic.Coord]
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U,U,U,U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ f :: * -> *
+                   ($dFunctor :: GHC.Base.Functor f)
+                   (f1 :: [GameLogic.Coord] -> f [GameLogic.Coord])
+                   (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState x x1 x2 x3 x4 x5 ->
+                 GHC.Base.fmap
+                   @ f
+                   $dFunctor
+                   @ [GameLogic.Coord]
+                   @ GameLogic.GameState
+                   (\ (y :: [GameLogic.Coord]) -> GameLogic.GameState x x1 y x3 x4 x5)
+                   (f1 x2) }) -}
+2feb7ac4c74137a9e03fe727e5a98770
+  blackPieces ::
+    Lens.Micro.Type.Lens' GameLogic.GameState [GameLogic.Coord]
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U,U,U,U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ f :: * -> *
+                   ($dFunctor :: GHC.Base.Functor f)
+                   (f1 :: [GameLogic.Coord] -> f [GameLogic.Coord])
+                   (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState x x1 x2 x3 x4 x5 ->
+                 GHC.Base.fmap
+                   @ f
+                   $dFunctor
+                   @ [GameLogic.Coord]
+                   @ GameLogic.GameState
+                   (\ (y :: [GameLogic.Coord]) ->
+                    GameLogic.GameState y x1 x2 x3 x4 x5)
+                   (f1 x) }) -}
+49b3508edf71b96a23a9e9adb7bc7bf1
+  initialGameState :: GameLogic.GameState
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GameLogic.GameState
+                   GameLogic.blackInit
+                   GameLogic.redInit
+                   (GHC.Types.[] @ GameLogic.Coord)
+                   (GHC.Types.[] @ GameLogic.Coord)
+                   GameLogic.Red
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+5280a84929287aca788ccc23b0b492ee
+  message ::
+    Lens.Micro.Type.Lens' GameLogic.GameState GHC.Base.String
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U,U,U,U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ f :: * -> *
+                   ($dFunctor :: GHC.Base.Functor f)
+                   (f1 :: GHC.Base.String -> f GHC.Base.String)
+                   (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState x x1 x2 x3 x4 x5 ->
+                 GHC.Base.fmap
+                   @ f
+                   $dFunctor
+                   @ GHC.Base.String
+                   @ GameLogic.GameState
+                   (\ (y :: GHC.Base.String) -> GameLogic.GameState x x1 x2 x3 x4 y)
+                   (f1 x5) }) -}
+5768dbfd6265749184802910948ed655
+  redInit :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit30
+                   GameLogic.redInit1) -}
+1cc8aaea936e114b4e0e64fae4ef542c
+  redInit1 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit29
+                   GameLogic.redInit2) -}
+05282a84afce81c9f671f0a0d7d1bf13
+  redInit10 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit15
+                   GameLogic.redInit11) -}
+eca352822d43149768a521f29a7a035e
+  redInit11 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit12
+                   (GHC.Types.[] @ GameLogic.Coord)) -}
+63c47fe03781544f6d9191ab81b7ff7c
+  redInit12 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit14, GameLogic.redInit13)) -}
+47a58ea31beb9e319ae27f66bce58b6f
+  redInit13 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 5#) -}
+8a461c402f3075ba592bbbdac37ecc22
+  redInit14 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 6#) -}
+69e99dc11811eb352e9d74fce2ea8854
+  redInit15 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit16, GameLogic.redInit13)) -}
+2feb40e327fa34778ddbdc99a41174bd
+  redInit16 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 4#) -}
+2abfac47be2f0a76de3a1cd8439a4d1f
+  redInit17 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit18, GameLogic.redInit13)) -}
+71685041b9c13ba6c925cb6d6430d3a9
+  redInit18 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 2#) -}
+b90ce11b1ec31737d6a5e01617fe0252
+  redInit19 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.$fShowGameState2, GameLogic.redInit13)) -}
+708ce339b8381e10858eee0ef8af16d9
+  redInit2 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit28
+                   GameLogic.redInit3) -}
+d69e8a411e7bf1592743230ba4c3bb51
+  redInit20 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit21, GameLogic.redInit14)) -}
+c4aea643f5225c60488f35f9f0b90ec7
+  redInit21 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 7#) -}
+b86fd856ceaee3b6c497f300bbadc8cb
+  redInit22 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit13, GameLogic.redInit14)) -}
+f2647aa50197b1adaefb3293ecd3d041
+  redInit23 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit24, GameLogic.redInit14)) -}
+3983e5f8fea02c5fdc7b9278d141dc35
+  redInit24 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 3#) -}
+88496e57aa13ab222359fa66e23e01a8
+  redInit25 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit26, GameLogic.redInit14)) -}
+f4e730aa632347133ca2e3fc522c5f65
+  redInit26 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1#) -}
+8ab252fa47feb445c5d60a2a5a928818
+  redInit27 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit14, GameLogic.redInit21)) -}
+9b2c8883d823e2b257361155be2cc1a9
+  redInit28 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit16, GameLogic.redInit21)) -}
+129a571e1ae9087bcbb1d26e45ca71e5
+  redInit29 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.redInit18, GameLogic.redInit21)) -}
+2153c7fe940c7cd9cd8b7ce568a7d7c9
+  redInit3 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit27
+                   GameLogic.redInit4) -}
+03594493232459db3dac9027164b4ae4
+  redInit30 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((GameLogic.$fShowGameState2, GameLogic.redInit21)) -}
+1d02e8aff4d85a00772bc9189796971c
+  redInit4 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit25
+                   GameLogic.redInit5) -}
+3e7c9fdc96dfc4ef4e77712fe6e70568
+  redInit5 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit23
+                   GameLogic.redInit6) -}
+1d54627831c6ff3c5c386d375202ae9f
+  redInit6 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit22
+                   GameLogic.redInit7) -}
+0eb8eee2c47ff03d46c4e3255c8237c1
+  redInit7 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit20
+                   GameLogic.redInit8) -}
+7031b5f5173b51287ecf5a4df814e96d
+  redInit8 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit19
+                   GameLogic.redInit9) -}
+c4f10f0d4cdf14ca4bcca2289483c6c8
+  redInit9 :: [GameLogic.Coord]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GameLogic.Coord
+                   GameLogic.redInit17
+                   GameLogic.redInit10) -}
+d9ce0ded513919e2c430e63ada120f2e
+  redKings ::
+    Lens.Micro.Type.Lens' GameLogic.GameState [GameLogic.Coord]
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U,U,U,U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ f :: * -> *
+                   ($dFunctor :: GHC.Base.Functor f)
+                   (f1 :: [GameLogic.Coord] -> f [GameLogic.Coord])
+                   (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState x x1 x2 x3 x4 x5 ->
+                 GHC.Base.fmap
+                   @ f
+                   $dFunctor
+                   @ [GameLogic.Coord]
+                   @ GameLogic.GameState
+                   (\ (y :: [GameLogic.Coord]) -> GameLogic.GameState x x1 x2 y x4 x5)
+                   (f1 x3) }) -}
+383e197aeaf78c2641058d1a90fc038e
+  redPieces ::
+    Lens.Micro.Type.Lens' GameLogic.GameState [GameLogic.Coord]
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U,U,U,U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ f :: * -> *
+                   ($dFunctor :: GHC.Base.Functor f)
+                   (f1 :: [GameLogic.Coord] -> f [GameLogic.Coord])
+                   (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState x x1 x2 x3 x4 x5 ->
+                 GHC.Base.fmap
+                   @ f
+                   $dFunctor
+                   @ [GameLogic.Coord]
+                   @ GameLogic.GameState
+                   (\ (y :: [GameLogic.Coord]) -> GameLogic.GameState x y x2 x3 x4 x5)
+                   (f1 x1) }) -}
+26202e2a2da3aa793ff7f2c495776990
+  setMessage :: GameLogic.GameState -> GameLogic.GameState
+  {- Arity: 1, Strictness: <S(LLLLSL),1*U(U,U,U,U,U,U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: GameLogic.GameState) ->
+                 case s of wild { GameLogic.GameState x x1 x2 x3 x4 x5 ->
+                 case x4 of wild1 {
+                   GameLogic.Red
+                   -> GameLogic.GameState
+                        x
+                        x1
+                        x2
+                        x3
+                        GameLogic.Red
+                        GameLogic.applyMove1
+                   GameLogic.Black
+                   -> GameLogic.GameState
+                        x
+                        x1
+                        x2
+                        x3
+                        GameLogic.Black
+                        GameLogic.applyMove3
+                   GameLogic.GameOver -> wild } }) -}
+9cf18e3e1403c61bea71f38b16b258f4
+  status ::
+    Lens.Micro.Type.Lens' GameLogic.GameState GameLogic.Status
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(C(C(S))L),1*U(1*C1(C1(U)),A)><L,1*C1(U)><S,1*U(U,U,U,U,U,U)>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (3, False, False)
+                (\ @ f :: * -> *
+                   ($dFunctor :: GHC.Base.Functor f)
+                   (f1 :: GameLogic.Status -> f GameLogic.Status)
+                   (ds :: GameLogic.GameState) ->
+                 case ds of wild { GameLogic.GameState x x1 x2 x3 x4 x5 ->
+                 GHC.Base.fmap
+                   @ f
+                   $dFunctor
+                   @ GameLogic.Status
+                   @ GameLogic.GameState
+                   (\ (y :: GameLogic.Status) -> GameLogic.GameState x x1 x2 x3 y x5)
+                   (f1 x4) }) -}
+instance GHC.Classes.Eq [GameLogic.GameState]
+  = GameLogic.$fEqGameState
+instance GHC.Classes.Eq [GameLogic.Status] = GameLogic.$fEqStatus
+instance GHC.Show.Show [GameLogic.GameState]
+  = GameLogic.$fShowGameState
+instance GHC.Show.Show [GameLogic.Status] = GameLogic.$fShowStatus
+"SPEC/GameLogic $fEq(,) @ Int @ Int" [orphan] forall (v1 :: GHC.Classes.Eq
+                                                              GHC.Types.Int)
+                                                     (v :: GHC.Classes.Eq GHC.Types.Int)
+  GHC.Classes.$fEq(,) @ GHC.Types.Int @ GHC.Types.Int v v1
+  = GameLogic.$fEqGameState_$s$fEq(,)
+"SPEC/GameLogic $fEq(,)_$c/= @ Int @ Int" [orphan] forall ($dEq1 :: GHC.Classes.Eq
+                                                                      GHC.Types.Int)
+                                                          ($dEq :: GHC.Classes.Eq GHC.Types.Int)
+  GHC.Classes.$fEq(,)_$c/= @ GHC.Types.Int @ GHC.Types.Int $dEq $dEq1
+  = GameLogic.$fEqGameState_$s$fEq(,)_$c/=
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
