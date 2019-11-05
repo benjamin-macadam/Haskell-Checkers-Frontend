@@ -1,7 +1,6 @@
 {-# LANGUAGE OverloadedStrings, TemplateHaskell, FlexibleContexts #-}
 
-module Checkers ( tui
-                , human
+module Checkers ( human
                 , redAi
                 , blackAi
                 , aiTest
@@ -77,6 +76,7 @@ type ResourceName = String
   Set up lenses
 -}
 makeLenses ''TuiState
+makeLenses ''GameState
 {-
   Cursor functions
 -}
@@ -88,8 +88,6 @@ accessCursor = nonEmptyCursorCurrent . nonEmptyCursorCurrent
   Main function
 -}
 
-tui :: IO ()
-tui = human applyMove initialGameState
 
 human :: ApplyMove -> GameState -> IO ()
 human = generalConstructor Human Human
@@ -109,9 +107,9 @@ generalConstructor r b a g = do
   endState <- defaultMain tuiApp initialState
   print (endState^.game)
 {-
-  Basic tuiApp information. 
+  Basic tuiApp information.
 -}
-  
+
 tuiApp :: App TuiState e ResourceName
 tuiApp =
     App

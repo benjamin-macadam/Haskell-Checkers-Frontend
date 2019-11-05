@@ -2,6 +2,6 @@ module Main where
 
 --import Tui
 import Checkers
- 
+
 main :: IO ()
-main = tui
+main = human (\x z -> z) initialGameState

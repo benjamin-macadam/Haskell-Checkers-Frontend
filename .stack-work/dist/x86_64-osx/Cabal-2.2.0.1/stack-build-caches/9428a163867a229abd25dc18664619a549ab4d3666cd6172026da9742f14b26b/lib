@@ -1,0 +1,16 @@
+/Users/benjamin.macadam/Teaching/Haskell-Checkers-Frontend/tui.cabal:
+  hash: 5e194b3cb30c5309b1641e8629e288ba18dfa62dadafbca366aff92156fe2034
+  size: 1078
+  modtime: 1572058526
+/Users/benjamin.macadam/Teaching/Haskell-Checkers-Frontend/package.yaml:
+  hash: 063b27a1106406f3d24276bc7749dd71931f201bf1e9cedf127dc0c9265e73c6
+  size: 486
+  modtime: 1569599396
+/Users/benjamin.macadam/Teaching/Haskell-Checkers-Frontend/src/Checkers.hs:
+  hash: 4039895add50c76cb1d9fb0679067c9a7580d21d506ca29eaecbf94667f481a5
+  size: 10242
+  modtime: 1569956558
+/Users/benjamin.macadam/Teaching/Haskell-Checkers-Frontend/src/GameLogic.hs:
+  hash: 48e72d5a6ad82674b48a821fcd4ded77dc8e9156a432589d84609edf50543465
+  size: 1512
+  modtime: 1572893373

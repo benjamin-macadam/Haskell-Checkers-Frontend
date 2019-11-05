@@ -13,7 +13,7 @@ data MoveType = Human | AI AiMove
 type Coord = (Int, Int)
 type Move = [Coord]
 
-data Status = Red | Black | GameOver 
+data Status = Red | Black | GameOver
   deriving (Show, Eq)
 
 
@@ -23,10 +23,9 @@ data GameState =
             , _blackKings :: [Coord]
             , _redKings :: [Coord]
             , _status :: Status
-            , _message :: String}
+            , _message :: String
+            , _history :: [Move]}
               deriving (Show, Eq)
-
-makeLenses ''GameState
 
 
 initialGameState :: GameState
@@ -36,7 +35,8 @@ initialGameState =
             , _blackKings = []
             , _redKings = []
             , _status = Red
-            , _message = ""}
+            , _message = ""
+            , _history = []}
 
 blackInit :: [Coord]
 blackInit = [ (1,0), (3,0), (5,0), (7,0)
@@ -48,17 +48,3 @@ redInit = [ (0,7), (2,7), (4,7), (6,7)
           , (1,6), (3,6), (5,6), (7,6)
           , (0,5), (2,5), (4,5), (6,5)]
 
-setMessage :: GameState -> GameState
-setMessage s = case (s^.status) of
-  Red -> set message
-    "Red Turn." s
-  Black -> set message
-    "Black Turn." s
-  _ -> s
-applyMove :: Move -> GameState -> GameState
-applyMove _  s = case s^.status of
-  Red -> setMessage $ set status Black s
-  Black -> setMessage $ set status Red s
-  _ -> initialGameState
-
- 
