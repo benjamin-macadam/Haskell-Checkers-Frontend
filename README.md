@@ -95,16 +95,11 @@ In the gamestate, the coordinates of red and black pieces are recorded in the pi
 The status determines whose turn it is (or if it is game over).
 The message instructs the player on what to do (i.e. if they made an illegal move they must try again).
 
-The gamestate data type is a [lens](https://github.com/ekmett/lens/wiki "lens-wiki-link"). 
-You may manipulate it using [record syntax](https://en.wikibooks.org/wiki/Haskell/More_on_datatypes "record syntax") or by using the set, view, and over functions.
+You may manipulat the game state using [record syntax](https://en.wikibooks.org/wiki/Haskell/More_on_datatypes "record syntax") or by using the set, view, and over functions.
 
 ``` haskell
-set blackpieces [] g -- update using lens
-g & blackpieces .~ [] -- update using lens infix notation
-g{_blackpieces = []_} -- update using record notation
+g{_blackpieces = []} -- update using record notation
 
-view blackpieces g -- view using lens
-g^.blackpieces     -- view using lens infix notation
 _blackpieces g     -- view using record notation
 
 ```
@@ -140,7 +135,7 @@ aiTest :: AiMove -> AiMove -> ApplyMove -> GameState -> IO ()
 To run the program, you will need to go to Main.hs and set
 
 ``` haskell
-main = yourChoiceOf args
+main = human your_apply_move your_game_state
 ```
 
 You will need to hand the program the AI programs, game logic function, and the gamestate you wish
