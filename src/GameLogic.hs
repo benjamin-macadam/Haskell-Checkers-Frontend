@@ -1,8 +1,7 @@
 {-# LANGUAGE OverloadedStrings, TemplateHaskell, FlexibleContexts #-}
 module GameLogic where
 
-import Lens.Micro.Platform
-
+type CheckersUI = MoveType -> MoveType -> ApplyMove -> GameState -> IO ()
 
 type ApplyMove = Move -> GameState -> GameState
 
@@ -17,7 +16,7 @@ data Status = Red | Black | GameOver
   deriving (Show, Eq)
 
 
-data GameState =
+data GameState k=
   GameState { _blackPieces :: [Coord]
             , _redPieces :: [Coord]
             , _blackKings :: [Coord]
@@ -26,6 +25,7 @@ data GameState =
             , _message :: String
             , _history :: [Move]}
               deriving (Show, Eq)
+
 
 
 initialGameState :: GameState
